@@ -1,0 +1,9 @@
+{% for calendar in site.data.calendars %}
+BEGIN:VCALENDAR
+VERSION:2.0
+NAME:{{ calendar[0] | replace: "-", " " }}
+{% for event in calendar[1] %}
+{% include vevent.ics %}
+{% endfor %}
+END:VCALENDAR
+{% endfor %}

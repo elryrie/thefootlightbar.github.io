@@ -1,0 +1,7 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+{% if page.title %}NAME:{{ page.title }}{% endif %}
+{% for event in site.data.calendars[calendar] %}
+{% include vevent.ics %}
+{% endfor %}
+END:VCALENDAR

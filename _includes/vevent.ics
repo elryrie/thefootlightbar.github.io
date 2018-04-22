@@ -1,0 +1,12 @@
+BEGIN:VEVENT
+SUMMARY;LANGUAGE=en;CHARSET=utf-8:{{ event.Summary }}
+DTSTART;VALUE=DATE-TIME:{{ event.Start_Date | replace: "-", "" }}T{{ event.Start_Time | replace: ":", "" }}
+DTEND;VALUE=DATE-TIME:{{ event.End_Date | replace: "-", "" }}T{{ event.End_Time | replace: ":", "" }}
+{% if event.Recurrence %}RRULE:FREQ={{ event.Recurrence | upcase }}{% if event.Recurrence_Count %};COUNT={{ event.Recurrence_Count }}{% endif %}{% endif %}
+LOCATION;LANGUAGE=en;CHARSET=utf-8:{{ event.Location | default: site.iCalendar.defaults.location }}
+{% if event.Description %}DESCRIPTION;LANGUAGE=en;CHARSET=utf-8:{{ event.Description }}{% endif %}
+{% if event.URL %}URL:{{ event.URL }}{% endif %}
+{% if event.Categories %}CATEGORIES;LANGUAGE=en;CHARSET=utf-8:{{ event.Categories }}{% endif %}
+STATUS:{{ event.Status | default: site.iCalendar.defaults.status | upcase }}
+{% if event.Image %}IMAGE:{{ event.Image }}{% endif %}
+END:VEVENT

@@ -23,3 +23,9 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "default"
+
+iCalendar:
+    defaults:
+        tzid: "America/New_York"
+        location: "465 Seneca Avenue, Ridgewood, Queens, NY 11385, United States"
+        status: "CONFIRMED"

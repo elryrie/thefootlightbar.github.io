@@ -1,0 +1,6 @@
+{%- if page.name == "all.ics" -%}
+    {%- include icalendar-all.ics -%}
+{%- else -%}
+    {%- assign calendar = page.name | replace: ".ics", "" -%}
+    {%- include icalendar-single.ics calendar=calendar -%}
+{%- endif -%}
