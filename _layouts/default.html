@@ -2,34 +2,12 @@
 <html lang="en">
 {% include head.html %}
 <body>
-    <header id="Masthead">
-        <h1>{{ site.title }}</h1>
-        {% include main-navigation.html %}
-    </header>
+    {% include masthead.html %}
 
     <main id="MainContent">
-        <header>
-            <h1>{{ page.title }}</h1>
-        </header>
-
         {{ content }}
-
     </main>
 
-    <footer id="MainFooter">
-        <p class="h-card vcard">
-            <a href="{{ site.url }}" class="p-name fn p-org org u-url url">The Footlight</a>,
-            <span class="adr">
-                <span class="p-street-address street-address">465 Seneca Ave</span>,
-                <span class="p-locality locality">Ridgewood</span>,
-                <span class="p-region region">NY</span>,
-                <span class="p-postal-code postal-code">11385</span>
-            </span>
-            <a href="tel:+17186738211" class="p-tel tel">(718) 673-8211</a>
-            <a href="mailto:footlightbar@gmail.com" class="u-email email">footlightbar@gmail.com</a>
-        </p>
-        <p>(<a href="http://suda.co.uk/projects/microformats/hcard/get-contact.php?uri={{ site.url }}/contact/">Add our contact information to your address book</a>.)</p>
-        <p>Website by <a href="https://shiftctrl.space/">Shift-CTRL Space</a>.</p>
-    </footer>
+    {% include foot.html %}
 </body>
 </html>

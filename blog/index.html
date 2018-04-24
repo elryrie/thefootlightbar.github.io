@@ -5,22 +5,28 @@ title: Blog
 <ol id="BlogPosts">
 {% for post in paginator.posts %}
 <li>
-    <article id="{{ post.id }}">
+    <article id="{{ post.id }}" class="h-entry hentry">
         <header>
-            <h1>
+            <h1 class="p-name entry-title">
                 <a href="{{ post.url }}">{{ post.title }}</a>
             </h1>
             <p class="ByLine">
-                <span class="date">{{ post.date }}</span>
+                <span class="dt-published published">{{ post.date }}</span>
             </p>
         </header>
 
-        <div class="PostContent">
-            {{ post.content }}
+        {% if post.image_url %}
+        <img src="{{ post.image_url | relative_url }}" alt="{{ post.image_alt }}" class="u-featured" />
+        {% endif %}
+
+        <div class="e-content entry-content">
+            {{ post.excerpt }}
         </div>
 
         <footer>
-            <!-- -->
+            {% if post.excerpt != post.content %}
+            <p><a href="{{ post.url | relative_url }}">Read on&hellip;</a>.</p>
+            {% endif %}
         </footer>
     </article>
 </li>

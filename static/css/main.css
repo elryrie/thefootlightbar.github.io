@@ -130,3 +130,11 @@ body {
         display: block;
     }
 }
+
+/**
+ * @group Blog posts.
+ */
+.u-featured {
+    display: block;
+    margin: 0 auto;
+}

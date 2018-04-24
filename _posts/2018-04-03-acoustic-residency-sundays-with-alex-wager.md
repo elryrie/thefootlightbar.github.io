@@ -1,6 +1,6 @@
 ---
 featured: true
-image: "/static/posts/images/alex-wagner.jpg"
+image_url: /static/posts/images/alex-wagner.jpg
 ---
 
 The Footlight is proud to feature Alex Wagner for four weeks of darn tootin&rsquo; good tunes from good ol' Texas. Each Sunday in April, grab your boots and high tail it over to the Footlight&rsquo;s front stage.

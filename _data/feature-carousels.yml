@@ -1,0 +1,11 @@
+welcome:
+  -
+    image_url: /static/images/footlight-bartender.jpg
+    image_alt: Bartender.
+  -
+    url:       # Some link?
+    image_url: /static/images/footlight-front-room-during-day.jpg
+    image_alt: During the day.
+  -
+    image_url: /static/images/footlight-dance-party.jpg
+    image_alt: Dance party.

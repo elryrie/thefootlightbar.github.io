@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+    {% include masthead.html %}
+
+    <main id="MainContent">
+        <article id="{{ page.id }}" class="h-entry hentry">
+            <header>
+                <h1 class="p-name entry-title">
+                    <a href="{{ page.url }}" class="u-url">{{ page.title }}</a>
+                </h1>
+                <p class="ByLine">
+                    <span class="dt-published published">{{ page.date }}</span>
+                </p>
+            </header>
+
+            {% if page.image_url %}
+            <img src="{{ page.image_url | relative_url }}" alt="{{ page.image_alt }}" class="u-featured" />
+            {% endif %}
+
+            <div class="e-content entry-content">
+                {{ content }}
+            </div>
+        </article>
+    </main>
+
+    {% include foot.html %}
+</body>
+</html>

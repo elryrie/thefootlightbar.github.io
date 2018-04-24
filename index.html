@@ -2,21 +2,34 @@
 title: "Home"
 ---
 
-<p>The Footlight is a music venue and bar, featuring all genres, local oriented music and cultural programming.</p>
+<section id="welcome">
+    <h1>Welcome to The Footlight</h1>
+    <p><dfn>The Footlight</dfn> is a music venue and bar, featuring all <a href="">genres</a>, local oriented music and cultural programming.</p>
 
-<section id="featured-posts">
+    <ol id="welcome-carousel">
+        {% for feature in site.data.feature-carousels.welcome %}
+        <li id="">
+            <a href="{{ feature.url }}">
+                <img src="{{ feature.image_url }}" alt="{{ feature.image_alt }}" />
+            </a>
+        </li>
+        {% endfor %}
+    </ol>
+
+</section>
+
+<section id="featured">
     <h1>Featured</h1>
-
-    <ol>
+    <ol id="featured-posts">
     {% for post in site.posts %}{% if post.featured %}
         <li>
             <h2>
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
             </h2>
-            <img src="{{ post.image | relative_url }}" alt="{{ post.image_alt }}" />
-            <p>{{post.excerpt}}</p>
+            <img src="{{ post.image_url | relative_url }}" alt="{{ post.image_alt }}" class="u-featured" />
+            <p>{{ post.excerpt }}</p>
             <p><a href="{{ post.url | relative_url }}">Read on&hellip;</a>.</p>
         </li>
     {% endif %}{% endfor %}
     </ol>
-</section>
+</section><!-- #featured -->
