@@ -31,6 +31,9 @@ html, body {
     padding-top: 50px;
     padding-bottom: 50px;
 }
+img {
+    max-width: 100%;
+}
 
 /**
  * @group Color palette.
