@@ -1,0 +1,114 @@
+/**
+ * The Footlight Bar, NYC.
+ *
+ * Main stylesheet.
+ */
+
+/**
+ * @group Layout.
+ */
+html, body {
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+#Masthead {
+    padding: 30px 0;
+}
+#Masthead h1 {
+    display: none;
+}
+#MainContent {
+    padding-top: 35px;
+    padding-bottom: 50px;
+}
+#MainContent,
+#MainFooter {
+    padding-right: 100px;
+    padding-left: 100px;
+}
+#MainFooter {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/**
+ * @group Color palette.
+ */
+body {
+    background: #FFF;
+}
+#Masthead {
+    background: #1C1513;
+}
+#MainFooter {
+    background: #27201F;
+}
+#Masthead a,
+#MainFooter a {
+    color: #FFF;
+    opacity: .9;
+}
+
+/**
+ * @group Typography.
+ */
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway/Raleway-Regular.ttf");
+}
+body {
+    font-family: "Raleway";
+    line-height: 1.5em;
+}
+
+#MainFooter {
+    color: #FFF;
+    opacity: .8;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/**
+ * @group Main navigation menu.
+ */
+#MainNavigation ul {
+    margin: 0;
+    padding: 0;
+    list-item-style: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+#MainNavigation li {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 15px;
+}
+#MainNavigation a {
+    text-decoration: none;
+}
+#MainNavigation li.current a,
+#MainNavigation a:hover {
+    color: #FF8010;
+    transition: color .2s;
+}
+#MainNavigation a[href="/"] img {
+    width: 200px;
+    height: 246px;
+}
+
+/**
+ * @group Main footer.
+ */
+#MainFooter .u-email,
+#MainFooter .p-tel {
+    margin-left: 2em;
+}
+#MainFooter p:last-child {
+    margin-top: 3em;
+    font-size: 10px;
+}

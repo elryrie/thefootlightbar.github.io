@@ -1,0 +1,22 @@
+main:
+  - 
+    url: /contact/
+    text: Contact
+  -
+    url: /about/
+    text: About
+    title_text: Learn more about us!
+  -
+    url: /
+    text: Footlight
+    title_text: Our homepage.
+    image_url: /static/images/logo.thefootlightbar.transparent.1110x1370.png
+  -
+    url: /welcome/
+    text: Gallery
+  -
+    url: /art/
+    text: Art
+  -
+    url: /calendars/
+    text: Calendar

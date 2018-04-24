@@ -23,6 +23,10 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "default"
+  - scope:
+      path: "calendars/*.ics"
+    values:
+      layout: "iCalendar"
 
 iCalendar:
     defaults:
