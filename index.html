@@ -1,0 +1,22 @@
+---
+title: "Home"
+---
+
+<p>The Footlight is a music venue and bar, featuring all genres, local oriented music and cultural programming.</p>
+
+<section id="featured-posts">
+    <h1>Featured</h1>
+
+    <ol>
+    {% for post in site.posts %}{% if post.featured %}
+        <li>
+            <h2>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h2>
+            <img src="{{ post.image | relative_url }}" alt="{{ post.image_alt }}" />
+            <p>{{post.excerpt}}</p>
+            <p><a href="{{ post.url | relative_url }}">Read on&hellip;</a>.</p>
+        </li>
+    {% endif %}{% endfor %}
+    </ol>
+</section>

@@ -7,6 +7,9 @@ main:
     text: About
     title_text: Learn more about us!
   -
+    url: /blog/
+    text: Blog
+  -
     url: /
     text: Footlight
     title_text: Our homepage.
