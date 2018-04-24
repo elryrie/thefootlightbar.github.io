@@ -24,12 +24,12 @@ html, body {
 }
 #MainContent,
 #MainFooter {
-    padding-right: 100px;
-    padding-left: 100px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 #MainFooter {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 /**
@@ -111,4 +111,19 @@ body {
 #MainFooter p:last-child {
     margin-top: 3em;
     font-size: 10px;
+}
+
+/**
+ * @group Mobile device styles.
+ */
+@media screen and (max-width: 680px) {
+    #MainContent {
+        text-align: justify;
+    }
+    #MainNavigation li {
+        display: block;
+    }
+    #MainFooter .adr {
+        display: block;
+    }
 }
