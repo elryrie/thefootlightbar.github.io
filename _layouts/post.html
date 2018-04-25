@@ -5,13 +5,16 @@
     {% include masthead.html %}
 
     <main id="MainContent">
-        <article id="{{ page.id }}" class="h-entry hentry">
+        <article id="post-{{ page.id | slugify }}" class="h-entry hentry">
             <header>
+                <time class="dt-published published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.iCalendar.date_format }}</time>
                 <h1 class="p-name entry-title">
-                    <a href="{{ page.url }}" class="u-url">{{ page.title }}</a>
+                    <a href="{{ page.url }}#post-{{ page.id | slugify }}" class="u-url">{{ page.title }}</a>
                 </h1>
                 <p class="ByLine">
-                    <span class="dt-published published">{{ page.date }}</span>
+                {% if page.author %}
+                    By {{ page.author }}
+                {% endif %}
                 </p>
             </header>
 

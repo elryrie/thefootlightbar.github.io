@@ -6,7 +6,7 @@
         {% assign num_seconds = 604800 %}
     {% comment %}TODO: Make YEARLY value, accounting for leap years. {% endcomment %}
 {% endcase %}
-<section id="h-events">
+<ol id="h-events">
 {% for i in (1..recurrence_count) %}
 {% assign x = i | minus: 1 %}
 {% if i == 1 %}
@@ -16,10 +16,14 @@
 {% endif %}
 {% assign start_date_unixtime = event.Start_Date | date: "%s" | plus: seconds_offset %}
 {% assign end_date_unixtime = event.End_Date | date: "%s" | plus: seconds_offset %}
-    <div class="h-event vevent">
-        <h1 class="p-summary summary p-name">{{ event.Summary }}{% if i > 1 %} {{ i }}{% endif %}</h1>
-        <p class="p-location location">{{ event.Location | default: site.iCalendar.defaults.location }}</p>
-        <ol>
+    <li class="h-event vevent">
+        <ul>
+            <li class="p-summary summary p-name">
+                {{ event.Summary }}{% if i > 1 %} {{ i }}{% endif %}
+            </li>
+            <li class="p-location location">
+                {{ event.Location | default: site.iCalendar.defaults.location }}
+            </li>
             <li>
                 Starts at <abbr class="dt-start dtstart" title="{{ start_date_unixtime | date: "%Y%m%d" }}T{{ event.Start_Time | date: "%H%M%S" }}">{{ start_date_unixtime | date: site.iCalendar.date_format }} {{ event.Start_Time | date: site.iCalendar.time_format }}</abbr>
             </li>
@@ -32,10 +36,10 @@
             {% if event.Status %}<li>
                 Status: <span class="status">{{ event.Status | upcase }}</span>
             </li>{% endif %}
-        </ol>
-        <p class="p-description description">
-            {{ event.Description }}
-        </p>
-    </div>
+            <li class="p-description description">
+                {{ event.Description }}
+            </li>
+        </ul>
+    </li>
 {% endfor %}
-</section><!-- #h-events -->
+</ol><!-- #h-events -->

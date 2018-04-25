@@ -12,9 +12,6 @@ html, body {
     border: none;
     padding: 0;
 }
-#Masthead {
-    padding: 30px 0;
-}
 #Masthead h1 {
     display: none;
 }
@@ -79,8 +76,7 @@ body {
 #MainNavigation ul {
     margin: 0;
     padding: 0;
-    list-item-style: none;
-    text-align: center;
+    list-style: none;
     text-transform: uppercase;
     font-size: 14px;
     letter-spacing: 2px;
@@ -89,7 +85,7 @@ body {
 #MainNavigation li {
     display: inline-block;
     vertical-align: middle;
-    padding: 15px;
+    padding: 35px 10px;
 }
 #MainNavigation a {
     text-decoration: none;
@@ -102,11 +98,15 @@ body {
 #MainNavigation a[href="/"] img {
     width: 200px;
     height: 246px;
+    transition: width .5s, height .5s;
 }
 
 /**
  * @group Main footer.
  */
+#MainFooter .u-photo {
+    display: none;
+}
 #MainFooter .u-email,
 #MainFooter .p-tel {
     margin-left: 2em;
@@ -120,11 +120,44 @@ body {
  * @group Mobile device styles.
  */
 @media screen and (max-width: 680px) {
-    #MainContent {
-        text-align: justify;
+    #Masthead {
+        padding: 0;
+    }
+    #MainNavigation::before {
+        content: "\2630";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        color: #FFF;
+        font-size: 2em;
+        cursor: pointer;
     }
     #MainNavigation li {
+        height: 0;
+        overflow: hidden;
+        padding: 0;
+        transition: height .5s, padding .5s;
+    }
+    #MainNavigation #main-nav-home {
         display: block;
+        height: auto;
+    }
+    #MainNavigation a[href="/"] img {
+        width: 70px;
+        height: 86px;
+        transition: height .5s, width 5s;
+    }
+    #Masthead:hover #MainNavigation li {
+        height: 1em;
+        padding: 10px 10px 20px;
+        transition: height .5s, padding .5s;
+    }
+    #Masthead:hover #MainNavigation #main-nav-home {
+        height: auto;
+        padding: 0;
+    }
+    #MainContent {
+        text-align: justify;
     }
     #MainFooter .adr {
         display: block;
@@ -134,6 +167,17 @@ body {
 /**
  * @group Blog posts.
  */
+.h-entry {
+    margin: 0 auto;
+    max-width: 680px;
+}
+header {
+    text-align: center;
+}
+.u-url {
+    color: inherit;
+    text-decoration: none;
+}
 .u-featured {
     display: block;
     margin: 0 auto;

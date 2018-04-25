@@ -5,10 +5,10 @@ title: Blog
 <ol id="BlogPosts">
 {% for post in paginator.posts %}
 <li>
-    <article id="{{ post.id }}" class="h-entry hentry">
+    <article id="post-{{ post.id | slugify }}" class="h-entry hentry">
         <header>
             <h1 class="p-name entry-title">
-                <a href="{{ post.url }}">{{ post.title }}</a>
+                <a href="{{ post.url }}#post-{{ post.id | slugify }}">{{ post.title }}</a>
             </h1>
             <p class="ByLine">
                 <span class="dt-published published">{{ post.date }}</span>

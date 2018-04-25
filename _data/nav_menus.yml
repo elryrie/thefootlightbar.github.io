@@ -11,8 +11,7 @@ main:
     text: Blog
   -
     url: /
-    text: Footlight
-    title_text: Our homepage.
+    text: Home
     image_url: /static/images/logo.thefootlightbar.transparent.1110x1370.png
   -
     url: /welcome/
