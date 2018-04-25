@@ -1,0 +1,34 @@
+{%- assign url = "https://www.google.com/calendar/event?action=TEMPLATE" -%}
+{%- assign summary = event.Summary | strip | cgi_escape -%}
+{%- assign start_date = event.Start_Date | date: "%Y%m%d" | cgi_escape -%}
+{%- assign start_time = event.Start_Time | date: "%H%M%S" | cgi_escape -%}
+{%- assign end_date = event.End_Date | date: "%Y%m%d" | cgi_escape -%}
+{%- assign end_time = event.End_Time | date: "%H%M%S" | cgi_escape -%}
+{%- assign location = event.Location | strip | default: site.iCalendar.defaults.location | cgi_escape -%}
+{%- assign details = event.Description | strip | cgi_escape -%}
+{%- if event.Recurrence -%}
+    {%- assign recur = "&recur=RRULE:FREQ=" | append: event.Recurrence | strip -%}
+    {%- if event.Recurrence_Count -%}
+        {%- assign recur = recur | append: ";COUNT=" | append: event.Recurrence_Count -%}
+    {%- endif -%}
+    {%- assign recur_safe = recur | cgi_escape -%}
+{%- endif -%}
+{{-
+    url
+    | append: "&amp;text="
+    | append: summary
+    | append: "&amp;dates="
+    | append: start_date
+    | append: "T"
+    | append: start_time
+    | append: "/"
+    | append: end_date
+    | append: "T"
+    | append: end_time
+    | append: "&amp;location="
+    | append: location
+    | append: "&amp;details="
+    | append: details
+    | append: "&amp;trp=true"
+    | append: recur_safe
+-}}

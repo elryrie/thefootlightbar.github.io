@@ -20,10 +20,18 @@
         <h1 class="p-summary summary p-name">{{ event.Summary }}{% if i > 1 %} {{ i }}{% endif %}</h1>
         <p class="p-location location">{{ event.Location | default: site.iCalendar.defaults.location }}</p>
         <ol>
-            <li>Starts at <abbr class="dt-start dtstart" title="{{ start_date_unixtime | date: "%Y%m%d" }}T{{ event.Start_Time | date: "%H%M%S" }}">{{ start_date_unixtime | date: site.iCalendar.date_format }} {{ event.Start_Time | date: site.iCalendar.time_format }}</abbr></li>
-            <li>Ends at <abbr class="dt-end dtend" title="{{ end_date_unixtime | date: "%Y%m%d" }}T{{ event.End_Time | date: "%H%M%S" }}">{{ end_date_unixtime | date: site.iCalendar.date_format }} {{ event.End_Time | date: site.iCalendar.time_format }}</abbr></li>
-            {% if event.URL %}<li><a href="{{ event.URL }}" class="u-url url">More information.</a></li>{% endif %}
-            {% if event.Status %}<li>Status: <span class="status">{{ event.Status | upcase }}</span></li>{% endif %}
+            <li>
+                Starts at <abbr class="dt-start dtstart" title="{{ start_date_unixtime | date: "%Y%m%d" }}T{{ event.Start_Time | date: "%H%M%S" }}">{{ start_date_unixtime | date: site.iCalendar.date_format }} {{ event.Start_Time | date: site.iCalendar.time_format }}</abbr>
+            </li>
+            <li>
+                Ends at <abbr class="dt-end dtend" title="{{ end_date_unixtime | date: "%Y%m%d" }}T{{ event.End_Time | date: "%H%M%S" }}">{{ end_date_unixtime | date: site.iCalendar.date_format }} {{ event.End_Time | date: site.iCalendar.time_format }}</abbr>
+            </li>
+            {% if event.URL %}<li>
+                <a href="{{ event.URL }}" class="u-url url">More information.</a>
+            </li>{% endif %}
+            {% if event.Status %}<li>
+                Status: <span class="status">{{ event.Status | upcase }}</span>
+            </li>{% endif %}
         </ol>
         <p class="p-description description">
             {{ event.Description }}
