@@ -2,47 +2,19 @@
 title: Blog
 ---
 
-<ol id="BlogPosts">
-{% for post in paginator.posts %}
-<li>
-    <article id="post-{{ post.id | slugify }}" class="h-entry hentry">
-        <header>
-            <h1 class="p-name entry-title">
-                <a href="{{ post.url }}#post-{{ post.id | slugify }}">{{ post.title }}</a>
-            </h1>
-            <p class="ByLine">
-                <span class="dt-published published">{{ post.date }}</span>
-            </p>
-        </header>
+<ol class="post-wrapper">{% for post in paginator.posts %}<li>
+        {% include h-entry.html entry=post excerpt_only=true %}
+</li>{% endfor %}</ol>
 
-        {% if post.image_url %}
-        <img src="{{ post.image_url | relative_url }}" alt="{{ post.image_alt }}" class="u-featured" />
-        {% endif %}
-
-        <div class="e-content entry-content">
-            {{ post.excerpt }}
-        </div>
-
-        <footer>
-            {% if post.excerpt != post.content %}
-            <p><a href="{{ post.url | relative_url }}">Read on&hellip;</a>.</p>
-            {% endif %}
-        </footer>
-    </article>
-</li>
-{% endfor %}
-</ol>
-
-<div class="pagination">
+<ul class="Pagination">
     {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
-    {% else %}
-    <span class="previous">Previous</span>
+    <li class="PaginationPrev">
+        <a href="{{ paginator.previous_page_path }}">Newer Posts</a>
+    </li>
     {% endif %}
-    <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
     {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-    {% else %}
-    <span class="next ">Next</span>
+    <li class="PaginationNext">
+        <a href="{{ paginator.next_page_path }}">Older Posts</a>
+    </li>
     {% endif %}
-</div>
+</ul>

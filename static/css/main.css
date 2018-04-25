@@ -7,7 +7,9 @@
 /**
  * @group Layout.
  */
-html, body {
+html,
+body,
+figure {
     margin: 0;
     border: none;
     padding: 0;
@@ -31,6 +33,11 @@ html, body {
 img {
     max-width: 100%;
 }
+.TwoUp {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em;
+}
 
 /**
  * @group Color palette.
@@ -43,6 +50,15 @@ body {
 }
 #MainFooter {
     background: #27201F;
+}
+h2,
+h3,
+a {
+    color: #FF8010;
+}
+a:hover {
+    color: #FF5310;
+    transition: 1s;
 }
 #Masthead a,
 #MainFooter a {
@@ -61,7 +77,9 @@ body {
     font-family: "Raleway";
     line-height: 1.5em;
 }
-
+a {
+    text-decoration: none;
+}
 #MainFooter {
     color: #FFF;
     opacity: .8;
@@ -76,7 +94,6 @@ body {
 #MainNavigation ul {
     margin: 0;
     padding: 0;
-    list-style: none;
     text-transform: uppercase;
     font-size: 14px;
     letter-spacing: 2px;
@@ -87,15 +104,12 @@ body {
     vertical-align: middle;
     padding: 35px 10px;
 }
-#MainNavigation a {
-    text-decoration: none;
-}
 #MainNavigation li.current a,
 #MainNavigation a:hover {
     color: #FF8010;
     transition: color .2s;
 }
-#MainNavigation a[href="/"] img {
+#MainNavigation #main-nav-home img {
     width: 200px;
     height: 246px;
     transition: width .5s, height .5s;
@@ -119,7 +133,7 @@ body {
 /**
  * @group Mobile device styles.
  */
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 780px) {
     #Masthead {
         padding: 0;
     }
@@ -142,7 +156,7 @@ body {
         display: block;
         height: auto;
     }
-    #MainNavigation a[href="/"] img {
+    #MainNavigation #main-nav-home img {
         width: 70px;
         height: 86px;
         transition: height .5s, width 5s;
@@ -167,16 +181,37 @@ body {
 /**
  * @group Blog posts.
  */
-.h-entry {
+#featured-posts ol,
+.post-wrapper,
+.Pagination {
+    list-style: none;
     margin: 0 auto;
+    padding: 0;
+}
+.PaginationPrev a::before {
+    content: "< ";
+}
+.PaginationNext a::after {
+    content: " >";
+}
+.h-entry {
+    margin: 0 auto 4em;
+}
+.h-entry,
+.Pagination {
     max-width: 680px;
+}
+.PaginationPrev a {
+    float: left; float: inline-start;
+}
+.PaginationNext a {
+    float: right; float: inline-end;
 }
 header {
     text-align: center;
 }
 .u-url {
     color: inherit;
-    text-decoration: none;
 }
 .u-featured {
     display: block;

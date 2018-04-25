@@ -1,0 +1,28 @@
+<article id="post-{{ include.entry.id | slugify }}" class="h-entry hentry">
+    <header>
+        <time class="dt-published published" datetime="{{ include.entry.date | date_to_xmlschema }}">{{ include.entry.date | date: site.iCalendar.date_format }}</time>
+        <h1 class="p-name entry-title">
+            <a href="{{ include.entry.url }}" class="u-url">{{ include.entry.title }}</a>
+        </h1>
+        {% if include.entry.author %}<p class="ByLine">
+            By <span class="p-author">{{ include.entry.author }}</span>
+        </p>{% endif %}
+    </header>
+
+    {% if include.entry.image_url %}
+    <img src="{{ include.entry.image_url | relative_url }}" alt="{{ include.entry.image_alt }}" class="u-featured" />
+    {% endif %}
+
+    <div class="e-content entry-content">
+        {% if include.excerpt_only %}{{ include.entry.excerpt }}{% else %}{{ content }}{% endif %}
+    </div>
+
+    <footer>
+        {% if include.excerpt_only and include.entry.excerpt != include.entry.content %}
+        <p><a href="{{ include.entry.url | relative_url }}">Read on&hellip;</a>.</p>
+        {% endif %}
+        {% unless include.excerpt_only %}
+            {% include h-events.html %}
+        {% endunless %}
+    </footer>
+</article>

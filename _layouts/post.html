@@ -3,49 +3,9 @@
 {% include head.html %}
 <body>
     {% include masthead.html %}
-
     <main id="MainContent">
-        <article id="post-{{ page.id | slugify }}" class="h-entry hentry">
-            <header>
-                <time class="dt-published published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.iCalendar.date_format }}</time>
-                <h1 class="p-name entry-title">
-                    <a href="{{ page.url }}#post-{{ page.id | slugify }}" class="u-url">{{ page.title }}</a>
-                </h1>
-                <p class="ByLine">
-                {% if page.author %}
-                    By {{ page.author }}
-                {% endif %}
-                </p>
-            </header>
-
-            {% if page.image_url %}
-            <img src="{{ page.image_url | relative_url }}" alt="{{ page.image_alt }}" class="u-featured" />
-            {% endif %}
-
-            <div class="e-content entry-content">
-                {{ content }}
-            </div>
-
-            <footer>
-                {% for calendar in site.data.calendars %}
-                    {% for event in calendar[1] %}
-                        {% assign event_slug = event.Summary | slugify %}
-                        {% if event_slug == page.slug %}
-                            {% include h-event.html event=event %}
-                            <div>
-                                <p>Save event information:</p>
-                                <ul>
-                                    <li><a href="{% include google-calendar-url.html event=event %}" title="Add this event to your Google Calendar.">Google Calendar</a></li>
-                                    <li><a href="http://h2vx.com/ics/{{ page.url | absolute_url | cgi_escape }}" title="Download this event as an iCalendar file.">iCal</a></li>
-                                </ul>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                {% endfor %}
-            </footer>
-        </article>
+    {% include h-entry.html entry=page %}
     </main>
-
     {% include foot.html %}
 </body>
 </html>
