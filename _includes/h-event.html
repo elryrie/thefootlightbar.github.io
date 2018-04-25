@@ -1,0 +1,33 @@
+{% assign recurrence_count = event.Recurrence_Count | default: 1 | plus: 0 %}
+{% case event.Recurrence | upcase %}
+    {% when "DAILY" %}
+        {% assign num_seconds = 86400 %}
+    {% when "WEEKLY" %}
+        {% assign num_seconds = 604800 %}
+    {% comment %}TODO: Make YEARLY value, accounting for leap years. {% endcomment %}
+{% endcase %}
+<section id="h-events">
+{% for i in (1..recurrence_count) %}
+{% assign x = i | minus: 1 %}
+{% if i == 1 %}
+    {% assign seconds_offset = 0 %}
+{% else %}
+    {% assign seconds_offset = num_seconds | times: x %}
+{% endif %}
+{% assign start_date_unixtime = event.Start_Date | date: "%s" | plus: seconds_offset %}
+{% assign end_date_unixtime = event.End_Date | date: "%s" | plus: seconds_offset %}
+    <div class="h-event vevent">
+        <h1 class="p-summary summary p-name">{{ event.Summary }}{% if i > 1 %} {{ i }}{% endif %}</h1>
+        <p class="p-location location">{{ event.Location | default: site.iCalendar.defaults.location }}</p>
+        <ol>
+            <li>Starts at <abbr class="dt-start dtstart" title="{{ start_date_unixtime | date: "%Y%m%d" }}T{{ event.Start_Time | date: "%H%M%S" }}">{{ start_date_unixtime | date: site.iCalendar.date_format }} {{ event.Start_Time | date: site.iCalendar.time_format }}</abbr></li>
+            <li>Ends at <abbr class="dt-end dtend" title="{{ end_date_unixtime | date: "%Y%m%d" }}T{{ event.End_Time | date: "%H%M%S" }}">{{ end_date_unixtime | date: site.iCalendar.date_format }} {{ event.End_Time | date: site.iCalendar.time_format }}</abbr></li>
+            {% if event.URL %}<li><a href="{{ event.URL }}" class="u-url url">More information.</a></li>{% endif %}
+            {% if event.Status %}<li>Status: <span class="status">{{ event.Status | upcase }}</span></li>{% endif %}
+        </ol>
+        <p class="p-description description">
+            {{ event.Description }}
+        </p>
+    </div>
+{% endfor %}
+</section><!-- #h-events -->

@@ -22,6 +22,24 @@
             <div class="e-content entry-content">
                 {{ content }}
             </div>
+
+            <footer>
+                {% for calendar in site.data.calendars %}
+                    {% for event in calendar[1] %}
+                        {% assign event_slug = event.Summary | slugify %}
+                        {% if event_slug == page.slug %}
+                            {% include h-event.html event=event %}
+                            <div>
+                                <p>Download event(s) from page:</p>
+                                <ul>
+                                    <li><a href="" title="Add this event to your Google Calendar.">Google Calendar</a></li>
+                                    <li><a href="http://h2vx.com/ics/{{ page.url | absolute_url | escape }}" title="Download this event as an iCalendar file.">iCal</a></li>
+                                </ul>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            </footer>
         </article>
     </main>
 

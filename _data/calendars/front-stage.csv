@@ -1,3 +1,4 @@
 Summary,Start_Date,Start_Time,End_Date,End_Time,Recurrence,Recurrence_Count,Location,Description,Image,Status,URL,Categories
 One-off Concert,2018-04-21,20:00:00,2018-04-21,23:00:00,,,,This band rocks!,https://example.com/image.jpg,,https://thefootlightbar.nyc/events/example-event/,"Concert,Rock Music"
 Karaoke,2018-04-23,22:00:00,2018-04-24,02:00:00,WEEKLY,,,Karaoke is the best part of the night.,,,,
+Acoustic Residency Sundays with Alex Wagner,2018-04-01,14:00:00,2018-04-01,18:00:00,WEEKLY,5,,Alex Wagner performs guitar!,https://static1.squarespace.com/static/5557afb5e4b00de931f0204b/t/5ac3e7ad88251b3d00f43558/1522788281919/isaac+mcclung+%281%29+%281%29.jpg?format=2500w,CONFIRMED,https://example.com/,Acoustic Residency
