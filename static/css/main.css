@@ -18,6 +18,15 @@ img {
     max-width: 100%;
     max-height: 100vh;
 }
+nav ul,
+#featured-posts ol,
+#gallery,
+.post-wrapper,
+.Pagination {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
 #Masthead h1 {
     display: none;
 }
@@ -97,11 +106,9 @@ a {
 }
 
 /**
- * @group Main navigation menu.
+ * @group Navigation menus.
  */
 #MainNavigation ul {
-    margin: 0;
-    padding: 0;
     text-transform: uppercase;
     font-size: 14px;
     letter-spacing: 2px;
@@ -113,14 +120,23 @@ a {
     padding: 35px 10px;
 }
 #MainNavigation li.current a,
-#MainNavigation a:hover {
+#MainFooter li.current a,
+#MainNavigation a:hover,
+#MainFooter a:hover {
     color: #FF8010;
     transition: color .2s;
 }
-#MainNavigation #main-nav-home img {
+#MainNavigation .main-nav-home img {
     width: 200px;
     height: 246px;
     transition: width .5s, height .5s;
+}
+#MainFooter nav li {
+    display: inline-block;
+    margin: 1em;
+}
+#MainFooter nav img {
+    height: 5em;
 }
 
 /**
@@ -175,14 +191,6 @@ a {
 /**
  * @group Blog posts.
  */
-#featured-posts ol,
-#gallery,
-.post-wrapper,
-.Pagination {
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
-}
 .PaginationPrev a::before {
     content: "< ";
 }
@@ -251,11 +259,11 @@ header {
         padding: 0;
         transition: height .5s, padding .5s;
     }
-    #MainNavigation #main-nav-home {
+    #MainNavigation .main-nav-home {
         display: block;
         height: auto;
     }
-    #MainNavigation #main-nav-home img {
+    #MainNavigation .main-nav-home img {
         width: 70px;
         height: 86px;
         transition: height .5s, width 5s;
@@ -265,7 +273,7 @@ header {
         padding: 10px 10px 20px;
         transition: height .5s, padding .5s;
     }
-    #Masthead:hover #MainNavigation #main-nav-home {
+    #Masthead:hover #MainNavigation .main-nav-home {
         height: auto;
         padding: 0;
     }
@@ -283,5 +291,12 @@ header {
     }
     #MainFooter .adr {
         display: block;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    #MainFooter .main-nav-home {
+        display: block;
+        margin: 0;
     }
 }
