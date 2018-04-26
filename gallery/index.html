@@ -2,41 +2,10 @@
 title: Gallery
 ---
 
-<ul id="gallery">
-    <li>
-        <figure>
-            <img src="{{ "/static/gallery/treadsspeakgoodeye.jpg" | relative_url }}" alt="" />
-            <figcaption>Treads by Mike Mehalick</figcaption>
-        </figure>
-    </li>
-    <li>
-        <figure>
-            <img src="{{ "/static/gallery/barlife.jpg" | relative_url }}" alt="" />
-            <figcaption>Bar life</figcaption>
-        </figure>
-    </li>
-    <li>
-        <figure>
-            <img src="{{ "/static/gallery/441_170910_Laura_Tim-7434.jpg" | relative_url }}" alt="" />
-            <figcaption>Photo by Lauren Stocker<figcaption>
-        </figure>
-    </li>
-    <li>
-        <figure>
-            <img src="{{ "/static/gallery/greatwoodsbaby.jpg" | relative_url }}" alt="" />
-            <figcaption>Great Woods (plus the next generation)</figcaption>
-        </figure>
-    </li>
-    <li>
-        <figure>
-            <img src="{{ "/static/gallery/treads+mike.jpg" | relative_url }}" alt="" />
-            <figcaption>Photo by Lauren Stocker</figcaption>
-        </figure>
-    </li>
-    <li>
-        <figure>
-            <img src="{{ "/static/gallery/desertsharkrsspeakgoodeye.jpg" | relative_url }}" alt="" />
-            <figcaption>Desert Sharks by Mike Mehalick<figcaption>
-        </figure>
-    </li>
-</ul>
+{% if site.data.gallery %}
+<ul id="gallery">{% for image in site.data.gallery %}
+    {% include gallery-image.html image=image %}
+{% endfor %}</ul>
+{% else %}
+<p>No images&mdash;yet. ;)</p>
+{% endif %}

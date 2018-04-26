@@ -1,24 +1,26 @@
 ---
-title: "Home"
+title: Home
+layout: default
 ---
 
+{% assign images = site.data.gallery | where: "featured", true %}
+{% if images %}
 <section id="welcome">
-    <h1>Welcome to The Footlight</h1>
-    <p><dfn>The Footlight</dfn> is a music venue and bar, featuring all genres, local oriented music and cultural programming.</p>
-    <ol id="welcome-carousel">
-        {% for feature in site.data.feature-carousels.welcome %}
-        <li id="">
-            <a href="{{ feature.url }}">
-                <img src="{{ feature.image_url | relative_url }}" alt="{{ feature.image_alt }}" />
-            </a>
-        </li>
-        {% endfor %}
-    </ol>
+    <h1>Welcome to {{ site.title }}</h1>
+    <ul id="gallery">{% for image in images %}
+    {% include gallery-image.html image=image %}
+    {% endfor %}</ul>
 </section>
+{% endif %}
 
+{% assign posts = site.posts | where: "featured", true %}
+{% if posts %}
 <section id="featured-posts">
     <h1>Featured</h1>
-    <ol>{% for post in site.posts %}{% if post.featured %}<li>
-            {% include h-entry.html entry=post excerpt_only=true %}
-        </li>{% endif %}{% endfor %}</ol>
+    <ol>{% for post in posts %}
+    <li>
+        {% include h-entry.html entry=post excerpt_only=true %}
+    </li>
+    {% endfor %}</ol>
 </section>
+{% endif %}

@@ -14,6 +14,9 @@ figure {
     border: none;
     padding: 0;
 }
+img {
+    max-width: 100%;
+}
 #Masthead h1 {
     display: none;
 }
@@ -21,17 +24,12 @@ figure {
     padding-top: 35px;
     padding-bottom: 50px;
 }
-#MainContent,
-#MainFooter {
-    padding-right: 20px;
-    padding-left: 20px;
+#PageWrapper {
+    max-width: 90%;
 }
 #MainFooter {
     padding-top: 50px;
     padding-bottom: 50px;
-}
-img {
-    max-width: 100%;
 }
 .TwoUp {
     display: grid;
@@ -184,6 +182,12 @@ a {
     #gallery li {
         max-width: none;
         margin-bottom: 2em;
+    }
+    .h-entry header,
+    .e-content,
+    .h-entry footer {
+        margin-left: 1em;
+        margin-right: 1em;
     }
     #MainFooter .adr {
         display: block;
