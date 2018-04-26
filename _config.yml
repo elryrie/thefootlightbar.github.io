@@ -45,3 +45,6 @@ iCalendar:
         status: "CONFIRMED"
     date_format: "%B %e, %Y"
     time_format: "%l:%M %p"
+    rrule_count_max_when_hourly_missing: 672
+    rrule_count_max_when_daily_missing:  90
+    rrule_count_max_when_weekly_missing: 8

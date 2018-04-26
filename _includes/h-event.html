@@ -1,11 +1,25 @@
-{% assign recurrence_count = event.Recurrence_Count | default: 1 | plus: 0 %}
 {% case event.Recurrence | upcase %}
+    {% when "HOURLY" %}
+        {% assign num_seconds = 3600 %}
     {% when "DAILY" %}
         {% assign num_seconds = 86400 %}
     {% when "WEEKLY" %}
         {% assign num_seconds = 604800 %}
-    {% comment %}TODO: Make YEARLY value, accounting for leap years. {% endcomment %}
+    {% when "YEARLY" %}
+        {% comment %}TODO: Make YEARLY value, accounting for leap years.{% endcomment %}
 {% endcase %}
+{% if event.Recurrence and nil == event.Recurrence_Count %}
+    {% case event.Recurrence | upcase %}
+        {% when "HOURLY" %}
+            {% assign recurrence_count = site.iCalendar.rrule_count_max_when_hourly_missing %}
+        {% when "DAILY" %}
+            {% assign recurrence_count = site.iCalendar.rrule_count_max_when_daily_missing %}
+        {% when "WEEKLY" %}
+            {% assign recurrence_count = site.iCalendar.rrule_count_max_when_weekly_missing %}
+    {% endcase %}
+{% else %}
+    {% assign recurrence_count = event.Recurrence_Count | default: 1 | plus: 0 %}
+{% endif %}
 <ol id="h-events">
 {% for i in (1..recurrence_count) %}
 {% assign x = i | minus: 1 %}
