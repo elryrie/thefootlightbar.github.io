@@ -16,6 +16,7 @@ figure {
 }
 img {
     max-width: 100%;
+    max-height: 100vh;
 }
 #Masthead h1 {
     display: none;
@@ -41,8 +42,9 @@ img {
     flex-wrap: wrap;
 }
 #gallery li {
-    max-width: calc(30% - 2em);
-    margin: auto;
+    flex: 30%;
+    margin: auto 1em;
+    padding-bottom: 2em;
 }
 
 /**
@@ -137,61 +139,37 @@ a {
 }
 
 /**
- * @group Mobile device styles.
+ * Welcome carousel.
  */
-@media screen and (max-width: 780px) {
-    #Masthead {
-        padding: 0;
-    }
-    #MainNavigation::before {
-        content: "\2630";
-        position: absolute;
-        top: 5px;
-        left: 5px;
-        color: #FFF;
-        font-size: 2em;
-        cursor: pointer;
-    }
-    #MainNavigation li {
-        height: 0;
-        overflow: hidden;
-        padding: 0;
-        transition: height .5s, padding .5s;
-    }
-    #MainNavigation #main-nav-home {
-        display: block;
-        height: auto;
-    }
-    #MainNavigation #main-nav-home img {
-        width: 70px;
-        height: 86px;
-        transition: height .5s, width 5s;
-    }
-    #Masthead:hover #MainNavigation li {
-        height: 1em;
-        padding: 10px 10px 20px;
-        transition: height .5s, padding .5s;
-    }
-    #Masthead:hover #MainNavigation #main-nav-home {
-        height: auto;
-        padding: 0;
-    }
-    #MainContent {
-        text-align: justify;
-    }
-    #gallery li {
-        max-width: none;
-        margin-bottom: 2em;
-    }
-    .h-entry header,
-    .e-content,
-    .h-entry footer {
-        margin-left: 1em;
-        margin-right: 1em;
-    }
-    #MainFooter .adr {
-        display: block;
-    }
+#welcome #gallery {
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    overflow-x: scroll;
+}
+#welcome #gallery li {
+    display: inline-block;
+}
+#welcome #gallery {
+    font-size: 0;
+}
+#welcome #gallery figure {
+    position: relative;
+}
+#welcome #gallery figcaption {
+    position: absolute;
+    bottom: 2em;
+    left: 50%;
+    margin-left: -25%;
+    border-radius: 2em;
+    padding: .5em;
+    width: 50%;
+    background-color: #E8E8E7;
+    color: #1C1513;
+    text-align: center;
+    font-size: 12px;
+    white-space: normal;
+    opacity: .8;
 }
 
 /**
@@ -236,4 +214,74 @@ header {
 }
 #h-events {
     display: none;
+}
+
+/**
+ * @group Specific page layouts.
+ */
+#welcome {
+    margin-top: -35px;
+}
+#welcome h1 {
+    display: none;
+}
+#featured-posts h1 {
+    text-align: center;
+}
+
+/**
+ * @group Mobile device styles.
+ */
+@media screen and (max-width: 780px) {
+    #Masthead {
+        padding: 0;
+    }
+    #MainNavigation::before {
+        content: "\2630";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        color: #FFF;
+        font-size: 2em;
+        cursor: pointer;
+    }
+    #MainNavigation li {
+        height: 0;
+        overflow: hidden;
+        padding: 0;
+        transition: height .5s, padding .5s;
+    }
+    #MainNavigation #main-nav-home {
+        display: block;
+        height: auto;
+    }
+    #MainNavigation #main-nav-home img {
+        width: 70px;
+        height: 86px;
+        transition: height .5s, width 5s;
+    }
+    #Masthead:hover #MainNavigation li {
+        height: 1em;
+        padding: 10px 10px 20px;
+        transition: height .5s, padding .5s;
+    }
+    #Masthead:hover #MainNavigation #main-nav-home {
+        height: auto;
+        padding: 0;
+    }
+    #MainContent {
+        text-align: justify;
+    }
+    #gallery li {
+        flex: 100%;
+    }
+    .h-entry header,
+    .e-content,
+    .h-entry footer {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    #MainFooter .adr {
+        display: block;
+    }
 }

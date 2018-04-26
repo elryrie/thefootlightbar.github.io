@@ -1,27 +1,34 @@
 -
-  src: /static/gallery/treadsspeakgoodeye.jpg
+  src: /static/images/treadsspeakgoodeye.jpg
   caption: Treads by Mike Mehalick
 -
-  src: /static/gallery/barlife.jpg
+  src: /static/images/barlife.jpg
   caption: Bar life
 -
-  src: /static/gallery/441_170910_Laura_Tim-7434.jpg
+  src: /static/images/441_170910_Laura_Tim-7434.jpg
   caption: Photo by Lauren Stocker
 -
-  src: /static/gallery/greatwoodsbaby.jpg
+  src: /static/images/greatwoodsbaby.jpg
   caption: Great Woods (plus the next generation)
 -
-  src: /static/gallery/treads+mike.jpg
+  src: /static/images/treads+mike.jpg
   caption: Photo by Lauren Stocker
 -
-  src: /static/gallery/desertsharkrsspeakgoodeye.jpg
+  src: /static/images/desertsharkrsspeakgoodeye.jpg
   caption: Desert Sharks by Mike Mehalick
 -
+  src: /static/images/footlight-front-room-during-day.jpg
+  caption: The Footlight&rsquo; front room during the day.
+-
   src: /static/images/footlight-bartender.jpg
+  caption: Tending bar at The Footlight!
   featured: true
 -
-  src: /static/images/footlight-front-room-during-day.jpg
+  src: /static/images/footlight-cocktail-party.jpg
   featured: true
 -
   src: /static/images/footlight-dance-party.jpg
+  featured: true
+-
+  src: /static/images/footlight-red-light-dance-party.jpg
   featured: true
