@@ -14,7 +14,7 @@ main:
     text: Home
     image_url: /static/images/logo.thefootlightbar.transparent.1110x1370.png
   -
-    url: /welcome/
+    url: /gallery/
     text: Gallery
   -
     url: /art/

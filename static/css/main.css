@@ -38,6 +38,14 @@ img {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2em;
 }
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+#gallery li {
+    max-width: calc(30% - 2em);
+    margin: auto;
+}
 
 /**
  * @group Color palette.
@@ -173,6 +181,10 @@ a {
     #MainContent {
         text-align: justify;
     }
+    #gallery li {
+        max-width: none;
+        margin-bottom: 2em;
+    }
     #MainFooter .adr {
         display: block;
     }
@@ -182,6 +194,7 @@ a {
  * @group Blog posts.
  */
 #featured-posts ol,
+#gallery,
 .post-wrapper,
 .Pagination {
     list-style: none;
