@@ -1,5 +1,6 @@
 BEGIN:VCALENDAR
 VERSION:2.0
+PRODID:iCalendar Generator at {{ site.url }}
 NAME:{{ site.title }} - All Events
 {% for calendar in site.data.calendars %}
 {% for event in calendar[1] %}

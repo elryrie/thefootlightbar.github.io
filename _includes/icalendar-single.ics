@@ -1,5 +1,6 @@
 BEGIN:VCALENDAR
 VERSION:2.0
+PRODID:iCalendar Generator at {{ site.url }}
 {% if page.title %}NAME:{{ page.title }}{% endif %}
 {% for event in site.data.calendars[calendar] %}
 {% include vevent.ics %}
