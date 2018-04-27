@@ -142,6 +142,11 @@ a {
 #MainFooter nav img {
     height: 5em;
 }
+#MainNavigation .main-nav-home img:hover,
+#MainFooter .main-nav-home img:hover {
+    filter: hue-rotate(360deg);
+    transition: filter 2s;
+}
 
 /**
  * @group Main footer.
@@ -216,6 +221,9 @@ a {
 }
 header {
     text-align: center;
+}
+.h-entry .dt-published {
+    color: #8D8D8D;
 }
 .u-url {
     color: inherit;
