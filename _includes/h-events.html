@@ -3,7 +3,7 @@
         {% assign event_slug = event.Summary | slugify %}
         {% if event_slug == include.entry.slug %}
             {% include h-event.html event=event %}
-            <div>
+            <div class="download-h-events">
                 <p>Save event information:</p>
                 <ul>
                     <li><a href="{% include google-calendar-url.html event=event %}" title="Add this event to your Google Calendar.">Google Calendar</a></li>

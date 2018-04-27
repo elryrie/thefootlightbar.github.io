@@ -41,7 +41,7 @@ defaults:
 iCalendar:
     defaults:
         tzid: "America/New_York"
-        location: "465 Seneca Avenue, Ridgewood, Queens, NY 11385, United States"
+        location: "465 Seneca Avenue, Ridgewood, Queens, NY, 11385, United States"
         status: "CONFIRMED"
     date_format: "%B %e, %Y"
     time_format: "%l:%M %p"

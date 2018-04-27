@@ -1,12 +1,17 @@
+{% assign recur_class = "none" %}
 {% case event.Recurrence | upcase %}
     {% when "HOURLY" %}
         {% assign num_seconds = 3600 %}
+        {% assign recur_class = event.Recurrence | downcase %}
     {% when "DAILY" %}
         {% assign num_seconds = 86400 %}
+        {% assign recur_class = event.Recurrence | downcase %}
     {% when "WEEKLY" %}
         {% assign num_seconds = 604800 %}
+        {% assign recur_class = event.Recurrence | downcase %}
     {% when "YEARLY" %}
         {% comment %}TODO: Make YEARLY value, accounting for leap years.{% endcomment %}
+        {% assign recur_class = event.Recurrence | downcase %}
 {% endcase %}
 {% if event.Recurrence and nil == event.Recurrence_Count %}
     {% case event.Recurrence | upcase %}
@@ -20,7 +25,7 @@
 {% else %}
     {% assign recurrence_count = event.Recurrence_Count | default: 1 | plus: 0 %}
 {% endif %}
-<ol id="h-events">
+<ol id="h-events" class="recurrence-{{ recur_class }}">
 {% for i in (1..recurrence_count) %}
 {% assign x = i | minus: 1 %}
 {% if i == 1 %}
@@ -33,10 +38,18 @@
     <li class="h-event vevent">
         <ul>
             <li class="p-summary summary p-name">
-                {{ event.Summary }}{% if i > 1 %} {{ i }}{% endif %}
+                {{ event.Summary }}
             </li>
             <li class="p-location location">
-                {{ event.Location | default: site.iCalendar.defaults.location }}
+                {% assign location = event.Location | default: site.iCalendar.defaults.location | split: "," %}
+                <span class="h-adr adr">
+                    {% if location[0] %}<span class="p-street-address street-address">{{ location[0] | strip }}</span>{% endif %}
+                    {% if location[1] %}<span class="p-extended-address extended-address">{{ location[1] | strip }}</span>{% endif %}
+                    {% if location[2] %}<span class="p-locality locality">{{ location[2] | strip }}</span>{% endif %}
+                    {% if location[3] %}<span class="p-region region">{{ location[3] | strip }}</span>{% endif %}
+                    {% if location[4] %}<span class="p-postal-code postal-code">{{ location[4] | strip }}</span>{% endif %}
+                    {% if location[5] %}<span class="p-country country">{{ location[5] | strip }}</span>{% endif %}
+                </span>
             </li>
             <li>
                 Starts at <abbr class="dt-start dtstart" title="{{ start_date_unixtime | date: "%Y%m%d" }}T{{ event.Start_Time | date: "%H%M%S" }}">{{ start_date_unixtime | date: site.iCalendar.date_format }} {{ event.Start_Time | date: site.iCalendar.time_format }}</abbr>

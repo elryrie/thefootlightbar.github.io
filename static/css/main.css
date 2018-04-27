@@ -21,8 +21,10 @@ img {
 nav ul,
 #featured-posts ol,
 #gallery,
-.post-wrapper,
-.Pagination {
+.posts-wrapper,
+.Pagination,
+#h-events,
+#h-events ul {
     list-style: none;
     margin: 0 auto;
     padding: 0;
@@ -36,6 +38,7 @@ nav ul,
 }
 #PageWrapper {
     max-width: 90%;
+    margin: 0 auto;
 }
 #MainFooter {
     padding-top: 50px;
@@ -61,6 +64,7 @@ nav ul,
  */
 body {
     background: #FFF;
+    color: #000;
 }
 #Masthead {
     background: #1C1513;
@@ -298,5 +302,98 @@ header {
     #MainFooter .main-nav-home {
         display: block;
         margin: 0;
+    }
+}
+
+@media print {
+    @page {
+        margin: 0;
+    }
+    #Masthead,
+    .ReadMore,
+    .h-entry time,
+    .download-h-events,
+    .Pagination,
+    #MainFooter > *,
+    #h-events .p-description,
+    #h-events .p-extended-address,
+    #h-events .p-locality,
+    #h-events .p-region,
+    #h-events .p-postal-code,
+    #h-events .p-country {
+        display: none;
+    }
+    img {
+        page-break-inside: avoid;
+    }
+    #MainContent a,
+    #MainContent a:hover,
+    #MainFooter a,
+    #MainFooter a:hover {
+        color: inherit;
+    }
+    #MainFooter {
+        background: transparent;
+    }
+    #MainFooter .h-card {
+        display: block;
+        font-size: 9pt;
+        color: #000;
+    }
+    #MainFooter .p-name.u-url::after {
+        content: " (" attr(href) ") ";
+        text-transform: lowercase;
+    }
+    #MainFooter .u-email,
+    #MainFooter .p-tel {
+        margin-left: .5em;
+    }
+    #MainContent,
+    #MainFooter {
+        padding: 0 5mm;
+    }
+    .h-entry {
+        margin: 0;
+        max-width: none;
+        font-size: 12pt;
+    }
+    .e-content {
+        font-size: 10pt;
+    }
+    .e-content a::after {
+        content: " (" attr(href) ")";
+    }
+    .u-featured {
+        float: left;
+        margin: 0 12pt 12pt 0;
+        width: 50%;
+    }
+
+    /**
+     * @group Promotion flyer styles.
+     */
+    .event-flyer #h-events {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        position: fixed;
+        bottom: 0;
+        margin-left: -5mm;
+        margin-right: -5mm;
+        height: 2.5in;
+    }
+    .h-event {
+        border-style: dotted;
+        border-color: #000;
+        border-width: 1px 1px 0 0;
+        padding: 5pt;
+        font-size: 8pt;
+    }
+    .h-event:last-child {
+        border-right-width: 0;
+    }
+    .event-flyer .h-entry .p-name:not(.p-summary) {
+        margin: 10pt;
+        font-size: 48pt;
+        line-height: 1em;
     }
 }

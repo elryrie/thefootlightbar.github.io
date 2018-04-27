@@ -2,8 +2,8 @@
 title: Blog
 ---
 
-<ol class="post-wrapper">{% for post in paginator.posts %}<li>
-        {% include h-entry.html entry=post excerpt_only=true %}
+<ol class="posts-wrapper">{% for post in paginator.posts %}<li>
+    {% include h-entry.html entry=post excerpt_only=true %}
 </li>{% endfor %}</ol>
 
 <ul class="Pagination">

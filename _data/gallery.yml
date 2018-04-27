@@ -20,11 +20,11 @@
   src: /static/images/footlight-front-room-during-day.jpg
   caption: The Footlight&rsquo; front room during the day.
 -
-  src: /static/images/footlight-bartender.jpg
-  caption: Tending bar at The Footlight!
+  src: /static/images/footlight-cocktail-party.jpg
   featured: true
 -
-  src: /static/images/footlight-cocktail-party.jpg
+  src: /static/images/footlight-bartender.jpg
+  caption: Tending bar at The Footlight!
   featured: true
 -
   src: /static/images/footlight-dance-party.jpg

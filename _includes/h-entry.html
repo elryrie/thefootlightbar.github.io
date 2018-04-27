@@ -19,7 +19,7 @@
 
     <footer>
         {% if include.excerpt_only and include.entry.excerpt != include.entry.content %}
-        <p><a href="{{ include.entry.url | relative_url }}">Read on&hellip;</a>.</p>
+        <p class="ReadMore"><a href="{{ include.entry.url | relative_url }}">Read on&hellip;</a>.</p>
         {% endif %}
         {% unless include.excerpt_only %}
             {% include h-events.html %}
