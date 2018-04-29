@@ -322,13 +322,7 @@ header {
     .h-entry time,
     .download-h-events,
     .Pagination,
-    #MainFooter > *,
-    #h-events .p-description,
-    #h-events .p-extended-address,
-    #h-events .p-locality,
-    #h-events .p-region,
-    #h-events .p-postal-code,
-    #h-events .p-country {
+    #MainFooter > * {
         display: none;
     }
     img {
@@ -375,40 +369,5 @@ header {
         float: left;
         margin: 0 12pt 12pt 0;
         width: 50%;
-    }
-
-    /**
-     * @group Promotion flyer styles.
-     */
-    .event-flyer #h-events {
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        position: fixed;
-        bottom: 0;
-        margin-left: -5mm;
-        margin-right: -5mm;
-        height: 2.5in;
-    }
-    .h-event {
-        border-style: dotted;
-        border-color: #000;
-        border-width: 1px 1px 0 0;
-        padding: 5pt;
-        font-size: 8pt;
-    }
-    .h-event:last-child {
-        border-right-width: 0;
-    }
-    .h-event .p-summary {
-        font-size: 10pt;
-        font-weight: bold;
-    }
-    .h-event .p-street-address {
-        font-size: 7pt;
-    }
-    .event-flyer .h-entry .p-name:not(.p-summary) {
-        margin: 10pt;
-        font-size: 48pt;
-        line-height: 1em;
     }
 }

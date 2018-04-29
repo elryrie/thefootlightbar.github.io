@@ -49,3 +49,4 @@ iCalendar:
     rrule_count_max_when_daily_missing:  90
     rrule_count_max_when_weekly_missing: 8
     rrule_count_max_when_monthly_missing: 6
+    rrule_count_max_when_yearly_missing: 4
