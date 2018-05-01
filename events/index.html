@@ -1,0 +1,11 @@
+---
+title: Events
+---
+
+<h1>Events at {{ site.title }}</h1>
+<ul id="events-wrapper">
+{% for event in site.data.events %}
+<li>{% include h-event.html event=event %}</li>
+{% endfor %}
+</ul>
+{% include h-events-download-links.html %}

@@ -25,7 +25,7 @@
 {% else %}
     {% assign recurrence_count = event.Recurrence_Count | default: 1 | plus: 0 %}
 {% endif %}
-<ol id="h-events" class="recurrence-{{ recur_class }}">
+<ol class="h-events recurrence-{{ recur_class }}">
 {% for i in (1..recurrence_count) %}
 {% assign x = i | minus: 1 %}
 {% if i == 1 %}
@@ -36,7 +36,19 @@
 {% assign start_date_unixtime = event.Start_Date | date: "%s" | plus: seconds_offset %}
 {% assign end_date_unixtime = event.End_Date | date: "%s" | plus: seconds_offset %}
     <li class="h-event vevent">
+        {% if event.Recurrence %}
+        <p class="event-recurrence">
+            {{ recur_class | capitalize }} on
+            {% case recur_class %}
+                {% when "weekly" %}
+                    {{ start_date_unixtime | date: "%A" }}s
+            {% endcase %}
+        </p>
+        {% endif %}
         <ul>
+            {% if event.Image %}
+            <li class="event-image"><img src="{{ event.Image }}" alt="" /></li>
+            {% endif %}
             <li class="p-summary summary p-name">
                 {{ event.Summary }}
             </li>
@@ -51,16 +63,16 @@
                     {% if location[5] %}<span class="p-country country">{{ location[5] | strip }}</span>{% endif %}
                 </span>
             </li>
-            <li>
-                Starts at <abbr class="dt-start dtstart" title="{{ start_date_unixtime | date: "%Y%m%d" }}T{{ event.Start_Time | date: "%H%M%S" }}">{{ start_date_unixtime | date: site.iCalendar.date_format }} {{ event.Start_Time | date: site.iCalendar.time_format }}</abbr>
+            <li class="event-start">
+                Starts at <abbr class="dt-start dtstart" title="{{ start_date_unixtime | date: "%Y%m%d" }}T{{ event.Start_Time | date: "%H%M%S" }}"><span class="event-start-date">{{ start_date_unixtime | date: site.iCalendar.date_format }}</span> <span class="event-start-time">{{ event.Start_Time | date: site.iCalendar.time_format }}</span></abbr>
             </li>
-            <li>
-                Ends at <abbr class="dt-end dtend" title="{{ end_date_unixtime | date: "%Y%m%d" }}T{{ event.End_Time | date: "%H%M%S" }}">{{ end_date_unixtime | date: site.iCalendar.date_format }} {{ event.End_Time | date: site.iCalendar.time_format }}</abbr>
+            <li class="event-end">
+                Ends at <abbr class="dt-end dtend" title="{{ end_date_unixtime | date: "%Y%m%d" }}T{{ event.End_Time | date: "%H%M%S" }}"><span class="event-end-date">{{ end_date_unixtime | date: site.iCalendar.date_format }}</span> <span class="event-end-time">{{ event.End_Time | date: site.iCalendar.time_format }}</span></abbr>
             </li>
             {% if event.URL %}<li>
                 <a href="{{ event.URL }}" class="u-url url">More information.</a>
             </li>{% endif %}
-            {% if event.Status %}<li>
+            {% if event.Status %}<li class="event-status">
                 Status: <span class="status">{{ event.Status | upcase }}</span>
             </li>{% endif %}
             <li class="p-description description">

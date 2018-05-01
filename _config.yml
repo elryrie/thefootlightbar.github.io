@@ -34,7 +34,7 @@ defaults:
     values:
       layout: "post"
   - scope:
-      path: "calendars/*.ics"
+      path: "events/*.ics"
     values:
       layout: "iCalendar"
 

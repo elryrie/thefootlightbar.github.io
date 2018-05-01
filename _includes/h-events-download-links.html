@@ -1,0 +1,11 @@
+{% if include.entry %}
+{% assign url = include.entry.url %}
+{% else %}
+{% assign url = page.url %}
+{% endif %}
+<div class="download-h-events">
+    <p>Save event information:</p>
+    <ul>
+        <li><a href="http://h2vx.com/ics/{{ url | absolute_url | cgi_escape }}" title="Download this event as an iCalendar file.">iCal</a></li>
+    </ul>
+</div>

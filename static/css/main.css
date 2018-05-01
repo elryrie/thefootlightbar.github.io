@@ -23,8 +23,9 @@ nav ul,
 #gallery,
 .posts-wrapper,
 .Pagination,
-#h-events,
-#h-events ul {
+#events-wrapper,
+.h-events,
+.h-events ul {
     list-style: none;
     margin: 0 auto;
     padding: 0;
@@ -232,7 +233,8 @@ header {
     display: block;
     margin: 0 auto;
 }
-#h-events {
+.h-entry .h-events,
+.h-events > li:not(:first-child) {
     display: none;
 }
 
@@ -247,6 +249,25 @@ header {
 }
 #featured-posts h1 {
     text-align: center;
+}
+
+#events-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+#events-wrapper li {
+    flex: 1 1 33%;
+}
+#events-wrapper .p-location,
+#events-wrapper .h-events:not(.recurrence-none) .event-start-date,
+#events-wrapper .h-events:not(.recurrence-none) .event-end-date,
+#events-wrapper .event-status  {
+    display: none;
+}
+#events-wrapper .event-image {
+    float: left;
+    width: 25%;
+    margin: 0 5px 5px 0;
 }
 
 /**

@@ -20,5 +20,5 @@ main:
     url: /art/
     text: Art
   -
-    url: /calendars/
-    text: Calendar
+    url: /events/
+    text: Events
