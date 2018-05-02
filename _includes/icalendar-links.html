@@ -1,0 +1,11 @@
+<div class="icalendar-links">
+    <p>Subscribe to these events in your calendaring application.</p>
+    <ul>
+        {% assign calendar_list = site.data.events | group_by: "Calendar" %}
+        <li><a href="{{ "/events/all.ics" | relative_url }}">All events</a></li>
+        {% for calendar in calendar_list %}
+        {% assign calendar_slug = calendar.name | slugify %}
+        <li><a href="{{ "/events/" | append: calendar_slug | append: ".ics"  | relative_url }}">{{ calendar.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>

@@ -102,6 +102,10 @@ body {
 a {
     text-decoration: none;
 }
+abbr {
+    border: none;
+    text-decoration: none;
+}
 #MainFooter {
     color: #FFF;
     opacity: .8;
@@ -210,6 +214,11 @@ a {
 .h-entry {
     margin: 0 auto 4em;
 }
+.h-entry .p-name,
+.h-event .p-summary {
+    font-size: xx-large;
+    line-height: 1em;
+}
 .h-entry,
 .Pagination {
     max-width: 680px;
@@ -251,23 +260,22 @@ header {
     text-align: center;
 }
 
-#events-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-}
-#events-wrapper li {
-    flex: 1 1 33%;
-}
-#events-wrapper .p-location,
-#events-wrapper .h-events:not(.recurrence-none) .event-start-date,
-#events-wrapper .h-events:not(.recurrence-none) .event-end-date,
-#events-wrapper .event-status  {
-    display: none;
+#events-wrapper .h-event {
+    clear: left;
 }
 #events-wrapper .event-image {
     float: left;
-    width: 25%;
-    margin: 0 5px 5px 0;
+    max-width: 30%;
+}
+#events-wrapper .h-event li:not(.event-image) {
+    margin-left: 33%;
+}
+#events-wrapper .p-summary {
+    text-transform: uppercase;
+    margin: .5em 0;
+}
+#events-wrapper .p-location {
+    display: none;
 }
 
 /**
