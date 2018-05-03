@@ -25,7 +25,8 @@ nav ul,
 .Pagination,
 #events-wrapper,
 .h-events,
-.h-events ul {
+.h-events ul,
+.icalendar-links ul {
     list-style: none;
     margin: 0 auto;
     padding: 0;
@@ -235,7 +236,7 @@ header {
 .h-entry .dt-published {
     color: #8D8D8D;
 }
-.u-url {
+.h-entry .u-url {
     color: inherit;
 }
 .u-featured {
@@ -260,22 +261,53 @@ header {
     text-align: center;
 }
 
-#events-wrapper .h-event {
+/**
+ * @group Events page.
+ */
+#events-wrapper .h-event,
+.icalendar-links {
     clear: left;
 }
 #events-wrapper .event-image {
     float: left;
     max-width: 30%;
 }
+#events-wrapper .event-image,
+#events-wrapper .h-event li:last-child {
+    padding-bottom: 2em;
+}
 #events-wrapper .h-event li:not(.event-image) {
-    margin-left: 33%;
+    margin-left: 35%;
 }
 #events-wrapper .p-summary {
     text-transform: uppercase;
     margin: .5em 0;
 }
-#events-wrapper .p-location {
+#events-wrapper .p-location,
+#events-wrapper .h-events:not(.recurrence-none) .event-start-date,
+#events-wrapper .event-end-date,
+#events-wrapper .event-status {
     display: none;
+}
+#events-wrapper .event-start-time::before {
+    content: "From ";
+}
+#events-wrapper .h-events.recurrence-none .event-start-time::before {
+    text-transform: lowercase;
+}
+#events-wrapper .event-start-time::after {
+    content: " to ";
+}
+#events-wrapper .p-description {
+    margin: 1em 0;
+}
+.icalendar-links ul {
+    text-align: center;
+}
+.icalendar-links li {
+    display: inline;
+    padding: 1em;
+    white-space: nowrap;
 }
 
 /**
@@ -318,9 +350,6 @@ header {
         height: auto;
         padding: 0;
     }
-    #MainContent {
-        text-align: justify;
-    }
     #gallery li {
         flex: 100%;
     }
@@ -340,6 +369,21 @@ header {
         display: block;
         margin: 0;
     }
+
+    #events-wrapper .h-event {
+        margin-bottom: 2em;
+    }
+    #events-wrapper .event-image {
+        float: none;
+        max-width: 100%;
+    }
+    #events-wrapper .event-image,
+    #events-wrapper .h-event li:last-child {
+        padding-bottom: 0;
+    }
+    #events-wrapper .h-event li:not(.event-image) {
+        margin-left: 0;
+    }
 }
 
 @media print {
@@ -351,10 +395,12 @@ header {
     .h-entry time,
     .download-h-events,
     .Pagination,
-    #MainFooter > * {
+    #MainFooter > *,
+    .icalendar-links {
         display: none;
     }
-    img {
+    img,
+    .h-event {
         page-break-inside: avoid;
     }
     #MainContent a,

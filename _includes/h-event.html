@@ -68,11 +68,9 @@
                     {% if location[5] %}<span class="p-country country">{{ location[5] | strip }}</span>{% endif %}
                 </span>
             </li>
-            <li class="event-start">
-                <abbr class="dt-start dtstart" title="{{ start_date_unixtime | date: "%Y%m%d" }}T{{ event.Start_Time | date: "%H%M%S" }}"><span class="event-start-date">{{ start_date_unixtime | date: site.iCalendar.date_format }}</span> <span class="event-start-time">{{ event.Start_Time | date: site.iCalendar.time_format }}</span></abbr>
-            </li>
-            <li class="event-end">
-                <abbr class="dt-end dtend" title="{{ end_date_unixtime | date: "%Y%m%d" }}T{{ event.End_Time | date: "%H%M%S" }}"><span class="event-end-date">{{ end_date_unixtime | date: site.iCalendar.date_format }}</span> <span class="event-end-time">{{ event.End_Time | date: site.iCalendar.time_format }}</span></abbr>
+            <li class="event-datetime">
+                    <abbr class="dt-start dtstart" title="{{ start_date_unixtime | date: "%Y%m%d" }}T{{ event.Start_Time | date: "%H%M%S" }}"><span class="event-start-date">{{ start_date_unixtime | date: site.iCalendar.date_format }}</span> <span class="event-start-time">{{ event.Start_Time | date: site.iCalendar.time_format }}</span></abbr>
+                    <abbr class="dt-end dtend" title="{{ end_date_unixtime | date: "%Y%m%d" }}T{{ event.End_Time | date: "%H%M%S" }}"><span class="event-end-date">{{ end_date_unixtime | date: site.iCalendar.date_format }}</span> <span class="event-end-time">{{ event.End_Time | date: site.iCalendar.time_format }}</span></abbr>
             </li>
             {% if event.Status %}<li class="event-status">
                 Status: <span class="status">{{ event.Status | upcase }}</span>
