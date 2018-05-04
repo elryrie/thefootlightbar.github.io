@@ -1,5 +1,5 @@
 <div class="icalendar-links">
-    <p>Subscribe to these events in your calendaring application.</p>
+    <p>Subscribe to these events in your calendaring application:</p>
     <ul>
         {% assign calendar_list = site.data.events | group_by: "Calendar" %}
         <li><a href="{{ "/events/all.ics" | relative_url }}">All events</a></li>

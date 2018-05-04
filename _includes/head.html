@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="{{ "static/css/main.css" | relative_url }}" />
 
     <link rel="canonical" href="{{ page.url | absolute_url }}" />
-    <link href="{{ "/blog/feed.xml" | relative_url }}" type="application/rss+xml" rel="alternate" title="Latest {{ site.rss.items | default: 10 }} blog posts" />
+    <link rel="alternate" href="{{ "/blog/feed.xml" | relative_url }}" type="application/rss+xml" title="Latest {{ site.rss.items | default: 10 }} blog posts" />
+    <link rel="alternate" href="{{ "/events/all.ics" | relative_url }}" type="text/calendar" title="All events" />
 
     <meta itemprop="name" content="{% include title-text.html %}" />
     <meta itemprop="url" content="{{ page.url | absolute_url }}" />
