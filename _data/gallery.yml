@@ -26,6 +26,8 @@
   src: /static/images/footlight-bartender.jpg
   caption: Tending bar at The Footlight!
   featured: true
+  link: https://example.com/
+  link_title: Hello world.
 -
   src: /static/images/footlight-dance-party.jpg
   featured: true

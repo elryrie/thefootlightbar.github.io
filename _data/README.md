@@ -176,4 +176,25 @@ You can supply as many categories as you want, but in practice it is a good idea
 
 ## Gallery
 
+> :construction: TK-TODO: Describe [YAML](https://en.wikipedia.org/wiki/YAML).
+
+[The `gallery.yml` data file](gallery.yml) controls which images are published to your website's "Gallery" page, along with which gallery image is featured on the home page's horizontal image slider. It is a YAML file containing a single list. Each item in the list represents an image in the gallery.
+
+In turn, each image in the gallery has, at a minimum, a `src` ("source") field, whose value should be the Web address of some image on the Web. The image may also contain the following optional fields:
+
+* `alt` - Brief textual description of the image, usually no more than a sentence or two. For example, `Sunset on a sand beach over calm waters.` This text is usually not displayed visually but provides a [gracefully degrading fallback](https://en.wikipedia.org/wiki/Fault_tolerance) in case of a network error, as well as [important accessibility benefits](https://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style/Accessibility/Alternative_text_for_images) for browsers with visual impairments, including humans as well as bots.
+* `caption` - A caption for the image. This accompanies the image as visually rendered text somewhere near the image itself. HTML is allowed in this field.
+* `link` - A Web address (URL) to link this image to. Omit this field if you do not want the image to be a link.
+* `link_title` - The `title` attribute text of the image's link. This field is ignored unless `link` is also set.
+* `featured` - Whether or not the image should be included on the home page's horizontal image slider. The only valid value is `true`; omit this field if you do not want to include the image on the front page.
+
 ## Navigation menus
+
+> :construction: TK-TODO: Describe [YAML](https://en.wikipedia.org/wiki/YAML).
+
+[The `nav_menus.yml` data file](nav_menus.yml) defines the name, order, and contents of your site's navigation menus.  Each menu has a name, such as `main` or `sidebar`. Each menu is a list of links that may also be an image. At a minimum, each menu item must include a `url` and a `text` field.
+
+Optionally, menu items may also include the following fields:
+
+* `title_text` - The `title` attribute's text for the link.
+* `image_url` - The Web address to an image.
