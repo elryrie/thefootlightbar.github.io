@@ -20,7 +20,10 @@ human_language: "en-US" # The primary human language you write in.
 # Build settings
 markdown: kramdown
 
-exclude: [vendor]
+exclude: [
+    "vendor",
+    "README.md"
+]
 
 # Blog settings.
 paginate: 5    # How many posts per HTML page.
