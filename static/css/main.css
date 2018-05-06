@@ -26,7 +26,8 @@ nav ul,
 #events-wrapper,
 .h-events,
 .h-events ul,
-.icalendar-links ul {
+.icalendar-links ul,
+.download-h-events ul {
     list-style: none;
     margin: 0 auto;
     padding: 0;
@@ -220,9 +221,23 @@ abbr {
     font-size: xx-large;
     line-height: 1em;
 }
+.download-h-events a {
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: inherit;
+    padding: .5em;
+}
+.download-h-events a:hover {
+    border-color: #E87501;
+    transition: border-color 1s;
+}
 .h-entry,
 .Pagination {
     max-width: 680px;
+}
+.h-entry .Pagination {
+    margin-top: 1em;
 }
 .PaginationPrev a {
     float: left; float: inline-start;
@@ -246,6 +261,10 @@ header {
 .h-entry .h-events,
 .h-events > li:not(:first-child) {
     display: none;
+}
+.h-entry footer {
+    border-top: 1px dashed #000;
+    margin-top: 4em;
 }
 
 /**
