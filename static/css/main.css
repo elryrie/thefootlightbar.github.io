@@ -279,6 +279,10 @@ header {
 #featured-posts h1 {
     text-align: center;
 }
+#featured-posts .h-entry footer,
+.posts-wrapper .h-entry footer {
+    border-top: none;
+}
 
 /**
  * @group Events page.
