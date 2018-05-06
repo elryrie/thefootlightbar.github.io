@@ -1,8 +1,9 @@
 Calendar,Summary,Start_Date,Start_Time,End_Date,End_Time,Recurrence,Recurrence_Interval,Recurrence_Count,Location,Description,Image,Status,URL,Categories
 Front Stage,One-off Concert,2018-04-21,22:00:00,2018-04-21,23:00:00,,,,,This band rocks!,https://example.com/image.jpg,,https://thefootlightbar.nyc/events/example-event/,"Concert,Rock Music"
-Front Stage,Karaoke,2018-04-23,20:00:00,2018-04-24,02:00:00,WEEKLY,,,,Karaoke is the best part of the night.,,,,
-Front Stage,Acoustic Residency Sundays with Alex Wagner,2018-04-01,16:00:00,2018-04-01,18:00:00,WEEKLY,,5,,Alex Wagner performs guitar!,https://static1.squarespace.com/static/5557afb5e4b00de931f0204b/t/5ac3e7ad88251b3d00f43558/1522788281919/isaac+mcclung+%281%29+%281%29.jpg?format=2500w,CONFIRMED,https://thefootlightbar.github.io/2018/04/03/karaoke.html,Acoustic Residency
+Front Stage,Karaoke,2018-04-23,20:00:00,2018-04-24,02:00:00,WEEKLY,,,,Karaoke is the best part of the night.,https://thefootlightbar.github.io/static/images/monday-karaoke.jpg,,,
+Front Stage,Acoustic Residency Sundays with Alex Wagner,2018-04-01,16:00:00,2018-04-01,18:00:00,WEEKLY,,5,,Alex Wagner performs guitar!,https://thefootlightbar.github.io/static/images/acoustic-residency-sundays-with-alex-wagner.jpg,CONFIRMED,https://example.com/,Acoustic Residency
 Front Stage,Pot Luck Mondays by Local Roots,2018-04-02,19:00:00,2018-04-02,21:00:00,WEEKLY,2,,,,,,,
 Back Stage,I/O,2018-05-06,14:30:00,2018-05-06,18:00:00,WEEKLY,,,,"I/O is a technology-centered project to cultivate autonomy in our communities. We connect grassroots organizations, nonprofits, and community members with free resources on technology, including info sessions, educational materials, and workshops. Each week, we set a space where we as individuals and small organizations become more aware of the power in our everyday tech and personal devices, and practice utilizing that power for the betterment of our lives and communities.
 Our events are free to attend, with a suggested donation of $10.
 ",https://shiftctrl.space/img/logo.bw.svg,,https://shift-ctrl.space/,
+Back Stage,Robot Princess/MNOP/Mischief Night/Duckspeak,2018-05-10,20:00:00,2018-05-10,23:00:00,,,,,,https://thefootlightbar.github.io/static/images/mischief+night.jpg,,https://thefootlightbar.github.io/2018/5/6/robot-princessmnopmischief-nightduckspeak.html,
