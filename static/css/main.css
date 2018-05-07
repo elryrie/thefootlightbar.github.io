@@ -210,6 +210,9 @@ abbr {
 .PaginationPrev a::before {
     content: "< ";
 }
+.PaginationNext {
+    text-align: right;
+}
 .PaginationNext a::after {
     content: " >";
 }
