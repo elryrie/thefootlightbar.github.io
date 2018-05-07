@@ -330,7 +330,7 @@ header {
 #events-wrapper .p-description {
     margin: 1em 0;
 }
-.icalendar-links ul {
+.icalendar-links {
     text-align: center;
 }
 .icalendar-links li {
