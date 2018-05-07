@@ -24,7 +24,7 @@ See also [Jekyll's documentation for writing posts](https://jekyllrb.com/docs/po
 
 Your blog posts can have custom metadata attached to them. This lets you do things like add a featured image to represent the main point of the post visually, associate the blog post with a specific event listed in your [`events.csv` data file](../_data/README.md#events), set a title different than the one in the file name, change the publication date, include an author's byline, and more.
 
-Custom fields must be written inside the Jekyll Front Matter block (the lines with only three dashes on them) at the very start of the file. To add a custom field, you write its name, followed by a colon (`:`), followed by a single space, followed by the value you want. If the value you want includes a colon (`:`), you must enclose the value in double quotes. For example, to override the title:
+Custom fields must be written inside the Jekyll Front Matter block (the lines with only three dashes on them) at the very start of the file. To add a custom field, you write its name, followed by a colon (`:`), followed by a single space, followed by the value you want. If the value you want includes a colon (`:`), you must enclose the value in double quotes. For example, to set a custom metadata field called `my_custom_metadata` with a value of `Special event: Dance of the Ages!`, you would add a line like this within the Front Matter portion of your blog post:
 
 ```yaml
 my_custom_metadata: "Special event: Dance of the Ages!"
@@ -48,7 +48,7 @@ Use the `featured` custom field to showcase a specific blog post in a prominent 
 
 ### `image`
 
-If you have already uploaded an image to [your site's `static/images` folder](../static/images/), you can use it as the featured image for this post by writing its filename as the `image` custom field. For example, assuming an image whose file name is `karaoke-event-poster.jpg` exists in the `static/images`, use this custom field value to make that image the featured image for this post:
+If you have already uploaded an image to [your site's `static/images` folder](../static/images/), you can use it as the featured image for this post by writing its filename as the `image` custom field. For example, assuming an image whose file name is `karaoke-event-poster.jpg` exists in the `static/images` folder, use this custom field value to make that image the featured image for this post:
 
 ```yaml
 image: "karaoke-event-poster.jpg"

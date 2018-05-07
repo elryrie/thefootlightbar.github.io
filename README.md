@@ -1,6 +1,6 @@
 # Your Website
 
-This folder, called the "web root" or sometimes "document root," contains the whole of your Website. Everything needed to publish your site's HTML pages, [blog posts](_posts/), calendars, galleries, [images](static/images/README.md#the-images-folder), and more are somewhere within this folder structure. Not all of these files are web pages. Some are [configuration files](#site-configuration), [data files](_data/README.md#the-_data-folder), or [snippets of templates](_includes/README.md#the-_includes-folder).
+This folder, called the "web root" or sometimes "document root," contains the whole of your Website. Everything needed to publish your site's HTML pages, [blog posts](_posts/), [events](_data/README.md#events), [gallery](_data/README.md#gallery), [images](static/images/), and more are somewhere within this folder structure. Not all of these files are Web pages. Some are [configuration files](#site-configuration), [data files](_data/README.md#the-_data-folder), or [snippets of templates](_includes/README.md#the-_includes-folder).
 
 The software used to publish your Website is called [Jekyll](https://jekyllrb.com/). It is the program responsible for processing the files in this folder structure and transforming them into the HTML pages, RSS feeds, iCalendar feeds, and other machine-readable formats that your Web browser, news reader, calendaring application, and other client software downloads. Much of the [documentation provided by the Jekyll project](https://jekyllrb.com/docs/) is therefor very useful in understanding both the folder hierarchy contained herein and the contents of each file in these folders.
 
@@ -12,6 +12,7 @@ All [Jekyll projects share a similar folder structure](https://jekyllrb.com/docs
 
 * [`_posts`](_posts/) - Blog posts are saved here.
 * [`_data`](_data/) - Site-specific content, such as navigation menus and calendar events, are saved here.
+* [`static/images`](static/images/) - Upload images for your blog posts, gallery, etcetera into this folder.
 
 There are other folders as well, but these are the ones you will need to open and edit most often.
 
