@@ -1,6 +1,6 @@
 ---
 featured: true
-image_url: "/static/images/majorindie5.jpg"
+image: "majorindie5.jpg"
 event_summary: "Major Indie Artist Night 5"
 ---
 

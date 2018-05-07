@@ -1,5 +1,5 @@
 ---
-image_url: "/static/images/fullmoon.png"
+image: "fullmoon.png"
 event_summary: "The Full Moon Cabaret"
 ---
 

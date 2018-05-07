@@ -14,8 +14,8 @@
         </p>{% endif %}
     </header>
 
-    {% if entry.image_url %}
-    <img src="{{ entry.image_url | relative_url }}" alt="{{ entry.image_alt }}" class="u-featured" />
+    {% if entry.image %}
+    <img src="{{ entry.image | prepend: "/static/images/" | relative_url }}" alt="{{ entry.image_alt }}" class="u-featured" />
     {% endif %}
 
     <div class="e-content entry-content">

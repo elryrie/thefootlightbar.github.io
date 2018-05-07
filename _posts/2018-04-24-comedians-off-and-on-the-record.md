@@ -1,5 +1,5 @@
 ---
-image_url: "/static/images/onandoffrecord.jpg"
+image: "onandoffrecord.jpg"
 event_summary: "Comedians: Off & On the Record"
 title: "Comedians: Off & On the Record"
 ---

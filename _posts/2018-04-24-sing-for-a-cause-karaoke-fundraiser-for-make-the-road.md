@@ -1,7 +1,7 @@
 ---
 title: "Sing for a Cause: Karaoke Fundraiser for Make the Road"
 event_summary: "Sing for a Cause: Karaoke Fundraiser for Make the Road"
-image_url: "/static/images/sing-for-a-cause-karaoke-fundraiser.jpg"
+image: "sing-for-a-cause-karaoke-fundraiser.jpg"
 ---
 
 SING FOR A CAUSE!

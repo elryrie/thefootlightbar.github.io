@@ -1,5 +1,5 @@
 ---
-image_url: "/static/images/live-trivia-night.jpg"
+image: "live-trivia-night.jpg"
 event_summary: "Live Trivia Nights"
 ---
 
