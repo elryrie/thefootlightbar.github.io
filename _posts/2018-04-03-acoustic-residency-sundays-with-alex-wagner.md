@@ -1,5 +1,4 @@
 ---
-featured: true
 image_url: "/static/images/acoustic-residency-sundays-with-alex-wagner.jpg"
 event_summary: "Acoustic Residency Sundays with Alex Wagner"
 ---

@@ -1,9 +1,46 @@
 Calendar,Summary,Start_Date,Start_Time,End_Date,End_Time,Recurrence,Recurrence_Interval,Recurrence_Count,Location,Description,Image,Status,URL,Categories
-Front Stage,One-off Concert,2018-04-21,22:00:00,2018-04-21,23:00:00,,,,,This band rocks!,https://example.com/image.jpg,,https://thefootlightbar.nyc/events/example-event/,"Concert,Rock Music"
-Front Stage,Karaoke,2018-04-23,20:00:00,2018-04-24,02:00:00,WEEKLY,,,,Karaoke is the best part of the night.,https://thefootlightbar.github.io/static/images/monday-karaoke.jpg,,,
-Front Stage,Acoustic Residency Sundays with Alex Wagner,2018-04-01,16:00:00,2018-04-01,18:00:00,WEEKLY,,5,,Alex Wagner performs guitar!,https://thefootlightbar.github.io/static/images/acoustic-residency-sundays-with-alex-wagner.jpg,CONFIRMED,https://thefootlightbar.github.io/2018/04/03/acoustic-residency-sundays-with-alex-wagner.html,Acoustic Residency
-Front Stage,Pot Luck Mondays by Local Roots,2018-04-02,19:00:00,2018-04-02,21:00:00,WEEKLY,2,,,,,,,
-Back Stage,I/O,2018-05-06,14:30:00,2018-05-06,18:00:00,WEEKLY,,,,"I/O is a technology-centered project to cultivate autonomy in our communities. We connect grassroots organizations, nonprofits, and community members with free resources on technology, including info sessions, educational materials, and workshops. Each week, we set a space where we as individuals and small organizations become more aware of the power in our everyday tech and personal devices, and practice utilizing that power for the betterment of our lives and communities.
-Our events are free to attend, with a suggested donation of $10.
-",https://shiftctrl.space/img/logo.bw.svg,,https://shift-ctrl.space/,
-Back Stage,Robot Princess/MNOP/Mischief Night/Duckspeak,2018-05-10,20:00:00,2018-05-10,23:00:00,,,,,,https://thefootlightbar.github.io/static/images/mischief+night.jpg,,https://thefootlightbar.github.io/2018/5/6/robot-princessmnopmischief-nightduckspeak.html,
+Front Stage,Karaoke! Finally! With Cheylene! Yay!,2018-04-23,20:00:00,2018-04-24,02:00:00,WEEKLY,,,,Karaoke is the best part of the night.,https://thefootlightbar.github.io/static/images/monday-karaoke.jpg,,,
+Front Stage,Acoustic Residency Sundays with Alex Wagner,2018-04-01,16:00:00,2018-04-01,18:00:00,WEEKLY,,5,,Alex Wagner performs guitar!,https://thefootlightbar.github.io/static/images/acoustic-residency-sundays-with-alex-wagner.jpg,,https://thefootlightbar.github.io/2018/04/03/acoustic-residency-sundays-with-alex-wagner.html,
+Front Stage,Pot Luck Mondays by Local Roots,2018-04-02,19:00:00,2018-04-02,21:00:00,WEEKLY,2,,,,https://thefootlightbar.github.io/static/images/potluck-mondays-by-local-roots.jpg,,,
+Back Stage,I/O,2018-05-06,14:30:00,2018-05-06,18:00:00,WEEKLY,,,,"I/O is a technology-centered project to cultivate autonomy in our communities. We connect grassroots organizations, nonprofits, and community members with free resources on technology, including info sessions, educational materials, and workshops. Each week, we set a space where we as individuals and small organizations become more aware of the power in our everyday tech and personal devices, and practice utilizing that power for the betterment of our lives and communities. Our events are free to attend, with a suggested donation of $10.",https://shiftctrl.space/img/logo.bw.svg,,https://shiftctrl.space/,
+Back Stage,Robot Princess/MNOP/Mischief Night/Duckspeak,2018-05-10,20:00:00,2018-05-10,23:00:00,,,,,,https://thefootlightbar.github.io/static/images/mischief+night.jpg,,https://thefootlightbar.github.io/2018/05/06/robot-princess-mnop-mischief-night-duckspeak.html,
+Back Stage,Video Game Night,2018-05-06,20:00:00,2018-05-06,23:00:00,,,,,,,,,
+Back Stage,Major Indie Artist Night 5,2018-05-17,19:00:00,2018-05-17,23:00:00,,,,,"The New Old School presents Major Indie Artist Night 5! There will be an open mic, plus featured acts! To perform at our next event, contact @BobbyStoneMusic on Instagram or bobbystonemusic@gmail.com.",https://thefootlightbar.github.io/static/images/majorindie5.jpg,,https://thefootlightbar.github.io/2018/05/05/major-indie-artist-night-5.html,
+Front Stage,Live Trivia Nights,2018-05-10,19:00:00,2018-05-10,21:00:00,WEEKLY,,,,"Stump!™ Trivia Quiz asks, “Where are you thinking tonight?” Come to the Footlight for live trivia nights each Thursday. Prizes will be awarded to 1st place, last place, and best wrong answer. We’ll also have bonus shot challenges for every round! Connect with StumpTrivia™ on Facebook or Twitter at @StumpTrivia.",https://thefootlightbar.github.io/static/images/live-trivia-night.jpg,,https://www.stumptrivia.com/,
+Back Stage,The Full Moon Cabaret,2018-04-24,21:30:00,2018-04-25,02:00:00,,,,,"Welcome to our third installment of The Full Moon Cabaret! Come down to The Footlight and celebrate with drag, burlesque, comedy and more! Stay until midnight for a full moon blessing!
+
+Doors are at 9:30
+Show starts at 10:00
+Blessing at Midnight
+Cover: $10 cash at the door
+
+Special Guest Host: Capri
+
+Performers:
+David Spector
+Marina Ritschel
+Vita Vendetta
+Honey Von Trapp
+Stephanie Guedalia's Turd Wave Feminist Furlesque
+TrashBeast
+Alfred Lloyd Wetter
+Mitchell Murdock
+
+Stage Manager: Aleea Alexsandra Jeanivieve",https://thefootlightbar.github.io/static/images/fullmoon.png,,https://thefootlightbar.github.io/2018/04/24/the-full-moon-cabaret.html,
+Back Stage,Comedians: Off & On the Record,2018-04-30,19:00:00,2018-04-30,22:00:00,,,,,"Comedians of today on stage. Comedians of yesterday on vinyl. We’ll meet in the middle….
+
+With:
+
+    Maddy Smith
+    Jay Welch
+    Davine Ker
+    CW Headley
+
+Hosted by Mark Miller.
+
+Classic Comedy chosen from:
+
+    Bob Newhart
+    Lily Tomlin
+    George Carlin
+    …others TBD",https://thefootlightbar.github.io/static/images/onandoffrecord.jpg,,https://thefootlightbar.github.io/2018/04/24/comedians-off-and-on-the-record.html,
