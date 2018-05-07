@@ -1,7 +1,7 @@
 ---
 featured: true
 image_url: "/static/images/majorindie5.jpg"
-event_summary: "Major Indie Arist Night 5"
+event_summary: "Major Indie Artist Night 5"
 ---
 
 The New Old School presents Major Indie Artist Night 5! There will be an open mic, plus featured acts!

@@ -6,7 +6,7 @@ DTSTART;VALUE=DATE-TIME:{{ event.Start_Date | date: "%Y%m%d" }}T{{ event.Start_T
 DTEND;VALUE=DATE-TIME:{{ event.End_Date | date: "%Y%m%d" }}T{{ event.End_Time | date: "%H%M%S" }}
 {% if event.Recurrence %}RRULE:FREQ={{ event.Recurrence | upcase }}{% if event.Recurrence_Interval %};INTERVAL={{ event.Recurrence_Interval }}{% endif %}{% if event.Recurrence_Count %};COUNT={{ event.Recurrence_Count }}{% endif %}{% endif %}
 LOCATION;LANGUAGE=en;CHARSET=utf-8:{{ event.Location | default: site.iCalendar.defaults.location }}
-{% if event.Description %}DESCRIPTION;LANGUAGE=en;CHARSET=utf-8:{{ event.Description }}{% endif %}
+{% if event.Description %}DESCRIPTION;LANGUAGE=en;CHARSET=utf-8:{{ event.Description | newline_to_br | strip_newlines | replace: "<br />", '\n' | replace: "<br>", '\n' }}{% endif %}
 {% if event.URL %}URL:{{ event.URL }}{% endif %}
 {% if event.Categories %}CATEGORIES;LANGUAGE=en;CHARSET=utf-8:{{ event.Categories }}{% endif %}
 STATUS:{{ event.Status | default: site.iCalendar.defaults.status | upcase }}

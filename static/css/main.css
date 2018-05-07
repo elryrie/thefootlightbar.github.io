@@ -266,6 +266,9 @@ header {
     border-top: 1px dashed #000;
     margin-top: 4em;
 }
+.h-entry footer .ReadMore {
+    margin-top: -3em;
+}
 
 /**
  * @group Specific page layouts.
