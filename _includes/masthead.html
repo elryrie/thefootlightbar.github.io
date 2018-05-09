@@ -1,6 +1,6 @@
 <header id="Masthead">
     <h1><img src="{{ "/static/images/logo.thefootlightbar.white-on-black.470x534.png" | relative_url }}" alt="{{ site.title }}" /></h1>
-    <nav id="MainNavigation">
+    <nav id="MainNavigation" onclick="void(0);">{% comment %}<!-- The `onclick` attribute is required for iOS hover effects. -->{% endcomment %}
         {% include site-navigation.html %}
     </nav>
 </header>

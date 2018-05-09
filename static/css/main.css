@@ -223,6 +223,7 @@ abbr {
 .h-event .p-summary {
     font-size: xx-large;
     line-height: 1em;
+    overflow-wrap: break-word;
 }
 .download-h-events a {
     display: inline-block;
