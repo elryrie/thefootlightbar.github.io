@@ -176,23 +176,21 @@ You can supply as many categories as you want, but in practice it is a good idea
 
 ## Gallery
 
-> :construction: TK-TODO: Describe [YAML](https://en.wikipedia.org/wiki/YAML).
+Your site includes a customizable gallery. To add an image to your site's gallery, first upload the image to [your site's `static/images` folder](../static/images/). Once uploaded, it can be referenced from [the `gallery.yml` data file](gallery.yml) (in this folder). By editing the `gallery.yml` file, you can control which uploaded images are included in your website's gallery, write captions for the images, make the images into clickable links, and more.
 
-[The `gallery.yml` data file](gallery.yml) controls which images are published to your website's "Gallery" page, along with which gallery image is featured on the home page's horizontal image slider. It is a YAML file containing a single list. Each item in the list represents an image in the gallery.
+The `gallery.yml` file is written in a structured format called [YAML](https://en.wikipedia.org/wiki/YAML). When you edit YAML files, be careful to maintain the structure of the file (i.e., match the indentation and punctuation style as in the rest of the file).
 
-In turn, each image in the gallery has, at a minimum, a `src` ("source") field, whose value should be the Web address of some image on the Web. The image may also contain the following optional fields:
+Your gallery images are represented as a single YAML list. Each item in the list (a dash on its own line) represents an image in the gallery. Each image in the gallery has, at a minimum, a `src` ("source") field, whose value should be the name of an image file in [your site's `static/images` folder](../static/images/). You may also specify the following optional fields for each image:
 
 * `alt` - Brief textual description of the image, usually no more than a sentence or two. For example, `Sunset on a sand beach over calm waters.` This text is usually not displayed visually but provides a [gracefully degrading fallback](https://en.wikipedia.org/wiki/Fault_tolerance) in case of a network error, as well as [important accessibility benefits](https://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style/Accessibility/Alternative_text_for_images) for browsers with visual impairments, including humans as well as bots.
 * `caption` - A caption for the image. This accompanies the image as visually rendered text somewhere near the image itself. HTML is allowed in this field.
-* `link` - A Web address (URL) to link this image to. Omit this field if you do not want the image to be a link.
-* `link_title` - The `title` attribute text of the image's link. This field is ignored unless `link` is also set.
+* `link` - A Web address (URL) to use as the destination of the link this image will become. Omit this field if you do not want the image to be a link.
+* `link_title` - The `title` attribute text of the image's link. This text is usually displayed as a tooltip when a visitor hovers their mouse cursor over the image. This field is ignored unless `link` is also set.
 * `featured` - Whether or not the image should be included on the home page's horizontal image slider. The only valid value is `true`; omit this field if you do not want to include the image on the front page.
 
 ## Navigation menus
 
-> :construction: TK-TODO: Describe [YAML](https://en.wikipedia.org/wiki/YAML).
-
-[The `nav_menus.yml` data file](nav_menus.yml) defines the name, order, and contents of your site's navigation menus.  Each menu has a name, such as `main` or `sidebar`. Each menu is a list of links that may also be an image. At a minimum, each menu item must include a `url` and a `text` field.
+[The `nav_menus.yml` data file](nav_menus.yml) defines the name, order, and contents of your site's navigation menus. Each menu has a name, such as `main` or `sidebar`. Each menu is a list of links that may also be an image. At a minimum, each menu item must include a `url` and a `text` field.
 
 Optionally, menu items may also include the following fields:
 

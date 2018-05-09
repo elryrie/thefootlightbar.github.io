@@ -1,7 +1,7 @@
 <li>
     <figure>
         {% if image.link %}<a href="{{ image.link }}" title="{{ image.link_title }}">{% endif %}
-        <img src="{{ image.src | relative_url }}" alt="{{ image.alt }}" />
+        <img src="{{ "/static/images/" | append: image.src | relative_url }}" alt="{{ image.alt }}" />
         {% if image.link %}</a>{% endif %}
         {% if image.caption %}<figcaption>{{ image.caption }}</figcaption>{% endif %}
     </figure>
