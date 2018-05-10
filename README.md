@@ -36,6 +36,16 @@ The title of your website. This is shown in the Web browser's title bar, set as 
 
 Your website's description should be a one or two sentence explanation of what your site is for and what a visitor might find useful about it. The description field is sometimes shown in the detail view of search engine result pages, and when someone shares your website address on social media.
 
+### `timezone`
+
+The default timezone for your website. This setting will affect things like the publication dates of blog posts and the specific times of published events. Jekyll uses the `tz` database for understanding timezone information. Set this to the closest city listed in [the `tz` list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+
+For example, for a website whose authors and events are primarily or only located in New York City, New York, United States:
+
+```yaml
+timezone: "America/New_York"
+```
+
 ## Build settings
 
 These settings affect the way Jekyll processes your site's source files. You probably shouldn't change any of these. :)
@@ -150,18 +160,6 @@ The iCalendar settings are similar in structure to the [RSS feed settings](#rss-
 
 The `iCalendar.defaults` object sets the default values for various event metadata.
 
-#### `iCalendar.defaults.tzid`
-
-The default timezone for events. Jekyll uses the `tz` database for understanding timezone information. Set this to the closest city listed in [the `tz` list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-
-For example, for a website whose events are primarily or only hosted in New York City, New York, United States:
-
-```yaml
-iCalendar:
-    defaults:
-        tzid: "America/New_York"
-```
-
 #### `iCalendar.defaults.location`
 
 The physical location for events that are missing this field from [the `events.csv` data file](_data/README.md#events). This should usually be set to the physical location of the event venue itself.
@@ -177,3 +175,15 @@ iCalendar:
 #### `iCalendar.defaults.status`
 
 The planning stage for events that are missing this field from [the `events.csv` data file](_data/README.md#events). The values are the same as for [the `Status` field](_data/README.md#status). The default is `CONFIRMED`.
+
+### iCalendar to h-event
+
+These settings determine how iCalendar data is converted to [h-event](http://microformats.org/wiki/h-event) (HTML event) metadata.
+
+#### iCalendar to h-event recurrence rules
+
+These settings determine how iCalendar data regarding recurring events is converted to `h-event` (HTML event) metadata.
+
+##### `iCalendar.h_event.rrule.max_when_weekly_missing`
+
+The number of future events to print on HTML pages when the event [recurs `WEEKLY`](_data/README.md#recurrence), including the first occurrence.

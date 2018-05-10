@@ -13,13 +13,13 @@ title: The Footlight
 #    This text will be used in feeds and other metadata
 #    throughout your site.
 human_language: "en-US" # The primary human language you write in.
+timezone: "America/New_York"
 
 # Project-specific settings.
 # Needs https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/#keeping-your-site-up-to-date-with-the-github-pages-gem
 
 # Build settings
 markdown: kramdown
-
 exclude: [
     "vendor",
     "README.md"
@@ -59,13 +59,14 @@ defaults:
 
 iCalendar:
     defaults:
-        tzid: "America/New_York"
         location: "465 Seneca Avenue, Ridgewood, Queens, NY, 11385, United States"
         status: "CONFIRMED"
     date_format: "%B %e, %Y"
     time_format: "%l:%M %p"
-    rrule_count_max_when_hourly_missing: 672
-    rrule_count_max_when_daily_missing:  90
-    rrule_count_max_when_weekly_missing: 8
-    rrule_count_max_when_monthly_missing: 6
-    rrule_count_max_when_yearly_missing: 4
+    h_event:
+        rrule:
+            max_when_hourly_missing: 672
+            max_when_daily_missing:  90
+            max_when_weekly_missing: 8
+            max_when_monthly_missing: 6
+            max_when_yearly_missing: 4

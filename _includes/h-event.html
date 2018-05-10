@@ -16,11 +16,11 @@
 {% if event.Recurrence and nil == event.Recurrence_Count %}
     {% case event.Recurrence | upcase %}
         {% when "HOURLY" %}
-            {% assign recurrence_count = site.iCalendar.rrule_count_max_when_hourly_missing %}
+            {% assign recurrence_count = site.iCalendar.h_event.rrule.max_when_hourly_missing %}
         {% when "DAILY" %}
-            {% assign recurrence_count = site.iCalendar.rrule_count_max_when_daily_missing %}
+            {% assign recurrence_count = site.iCalendar.h_event.rrule.max_when_daily_missing %}
         {% when "WEEKLY" %}
-            {% assign recurrence_count = site.iCalendar.rrule_count_max_when_weekly_missing %}
+            {% assign recurrence_count = site.iCalendar.h_event.rrule.max_when_weekly_missing %}
     {% endcase %}
 {% else %}
     {% assign recurrence_count = event.Recurrence_Count | default: 1 | plus: 0 %}
@@ -34,7 +34,17 @@
     {% assign seconds_offset = num_seconds | times: x %}
 {% endif %}
 {% assign start_date_unixtime = event.Start_Date | date: "%s" | plus: seconds_offset %}
+{% assign start_time_parts = event.Start_Time | split: ":" %}
+{% assign start_hour_in_seconds = 60 | times: 60 | times: start_time_parts[0] | default: 0 %}
+{% assign start_minute_in_seconds = 60 | times: start_time_parts[1] | default: 0 %}
+{% assign start_second_in_seconds = start_time_parts[2] | default: 0 %}
+{% assign start_time_in_seconds = 0 | plus: start_hour_in_seconds | plus: start_minute_in_seconds | plus: start_second_in_seconds %}
 {% assign end_date_unixtime = event.End_Date | date: "%s" | plus: seconds_offset %}
+{% assign end_time_parts = event.End_Time | split: ":" %}
+{% assign end_hour_in_seconds = 60 | times: 60 | times: end_time_parts[0] | default: 0 %}
+{% assign end_minute_in_seconds = 60 | times: end_time_parts[1] | default: 0 %}
+{% assign end_second_in_seconds = end_time_parts[2] | default: 0 %}
+{% assign end_time_in_seconds = 0 | plus: end_hour_in_seconds | plus: end_minute_in_seconds | plus: end_second_in_seconds %}
     <li class="h-event vevent">
         <ul>
             <li class="event-image">
@@ -69,8 +79,8 @@
                     </span>
                 </div>
                 {% endif %}
-                <abbr class="dt-start dtstart" title="{{ start_date_unixtime | date: "%Y%m%d" }}T{{ event.Start_Time | date: "%H%M%S" }}"><span class="event-start-date">{{ start_date_unixtime | date: site.iCalendar.date_format }}</span> <span class="event-start-time">{{ event.Start_Time | date: site.iCalendar.time_format }}</span></abbr>
-                <abbr class="dt-end dtend" title="{{ end_date_unixtime | date: "%Y%m%d" }}T{{ event.End_Time | date: "%H%M%S" }}"><span class="event-end-date">{{ end_date_unixtime | date: site.iCalendar.date_format }}</span> <span class="event-end-time">{{ event.End_Time | date: site.iCalendar.time_format }}</span></abbr>
+                <abbr class="dt-start dtstart" title="{{ start_date_unixtime | plus: start_time_in_seconds | date_to_xmlschema }}"><span class="event-start-date">{{ start_date_unixtime | date: site.iCalendar.date_format }}</span> <span class="event-start-time">{{ event.Start_Time | date: site.iCalendar.time_format }}</span></abbr>
+                <abbr class="dt-end dtend" title="{{ end_date_unixtime | plus: end_time_in_seconds | date_to_xmlschema }}"><span class="event-end-date">{{ end_date_unixtime | date: site.iCalendar.date_format }}</span> <span class="event-end-time">{{ event.End_Time | date: site.iCalendar.time_format }}</span></abbr>
             </li>
             {% if event.Status %}<li class="event-status">
                 Status: <span class="status">{{ event.Status | upcase }}</span>
