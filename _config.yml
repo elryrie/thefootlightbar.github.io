@@ -37,7 +37,7 @@ rss:
     ttl:              60       # Number of minutes indicating how long to cache the channel content.
     editor_email:     footlightbar@gmail.com # Email of the person responsible for channel content.
     webmaster_email:  footlightbar@gmail.com # Email of the person responsible for technical issues.
-    image:            "/static/images/logo.thefootlightbar.white-on-black.470x534.png"
+    image:            "logo.thefootlightbar.white-on-black.470x534.png"
 
 defaults:
   -

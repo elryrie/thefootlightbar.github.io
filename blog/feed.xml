@@ -25,7 +25,7 @@ layout: none
         {% if latest_post %}<lastBuildDate>{{ latest_post.date | date_to_rfc822 }}</lastBuildDate>{% endif %}
         {% if site.rss.image %}
         <image>
-            <url>{{ site.rss.image | absolute_url }}</url>
+            <url>{{ "/static/images/" | append: site.rss.image | absolute_url }}</url>
             <title>{{ site.title | xml_escape }}</title>
             <link>{{ site.url }}</link>
             <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>

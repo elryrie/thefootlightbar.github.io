@@ -12,7 +12,7 @@ main:
   -
     url: /
     text: Home
-    image_url: /static/images/logo.thefootlightbar.transparent.1110x1370.png
+    image_url: logo.thefootlightbar.transparent.1110x1370.png
   -
     url: /gallery/
     text: Gallery
