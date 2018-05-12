@@ -11,15 +11,15 @@ layout: none
 {%- assign oldest_post = site.posts | last -%}
 {%- assign latest_post = site.posts | first -%}
     <channel>
-        <language>{{ site.human_language | downcase | default: "en-us" }}</language>
+        <language>{{ site.human_language | downcase | default: "en-us" | xml_escape }}</language>
         <title>{{ site.title | xml_escape }}</title>
         <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
         <copyright>Copyright © by {{ site.title | xml_escape }}, {% if oldest_post %}{{ oldest_post.date | date: "%Y" | xml_escape }} – {% endif %}{{ "now" | date: "%Y" | xml_escape }}</copyright>
-        {% if site.rss.webmaster_email %}<webMaster>{{ site.rss.webmaster_email }}</webMaster>{% endif %}
-        {% if site.rss.editor_email %}<managingEditor>{{ site.rss.editor_email }}</managingEditor>{% endif %}
+        {% if site.rss.webmaster_email %}<webMaster>{{ site.rss.webmaster_email | xml_escape }}</webMaster>{% endif %}
+        {% if site.rss.editor_email %}<managingEditor>{{ site.rss.editor_email | xml_escape }}</managingEditor>{% endif %}
         <sy:updatePeriod>{{ site.feed_update_period | default: "daily" | xml_escape }}</sy:updatePeriod>
         <sy:updateFrequency>{{ site.feed_update_frequency | default: 1 | xml_escape }}</sy:updateFrequency>
-        {% if site.rss.ttl %}<ttl>{{ site.rss.ttl }}</ttl>{% endif %}
+        {% if site.rss.ttl %}<ttl>{{ site.rss.ttl | xml_escape }}</ttl>{% endif %}
         <link>{{ site.url }}</link>
         <atom:link href="{{ page.url | absolute_url }}" rel="self" type="application/rss+xml" />
         {% if latest_post %}<lastBuildDate>{{ latest_post.date | date_to_rfc822 }}</lastBuildDate>{% endif %}
