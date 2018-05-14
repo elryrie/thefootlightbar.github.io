@@ -180,7 +180,7 @@ Your site includes a customizable gallery. To add an image to your site's galler
 
 The `gallery.yml` file is written in a structured format called [YAML](https://en.wikipedia.org/wiki/YAML). When you edit YAML files, be careful to maintain the structure of the file (i.e., match the indentation and punctuation style as in the rest of the file).
 
-Your gallery images are represented as a single YAML list. Each item in the list (a dash on its own line) represents an image in the gallery. Each image in the gallery has, at a minimum, a `src` ("source") field, whose value should be the name of an image file in [your site's `static/images` folder](../static/images/). You may also specify the following optional fields for each image:
+Your gallery images are represented as a single YAML list. Each item in the list (a dash on its own line) represents an image in the gallery. Each image in the gallery has, at a minimum, an `image` field, whose value should be the name of an image file in [your site's `static/images` folder](../static/images/). You may also specify the following optional fields for each image:
 
 * `alt` - Brief textual description of the image, usually no more than a sentence or two. For example, `Sunset on a sand beach over calm waters.` This text is usually not displayed visually but provides a [gracefully degrading fallback](https://en.wikipedia.org/wiki/Fault_tolerance) in case of a network error, as well as [important accessibility benefits](https://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style/Accessibility/Alternative_text_for_images) for browsers with visual impairments, including humans as well as bots.
 * `caption` - A caption for the image. This accompanies the image as visually rendered text somewhere near the image itself. HTML is allowed in this field.
@@ -195,4 +195,4 @@ Your gallery images are represented as a single YAML list. Each item in the list
 Optionally, menu items may also include the following fields:
 
 * `title_text` - The `title` attribute's text for the link.
-* `image_url` - The Web address to an image.
+* `image` - The name of an image file in [your site's `static/images` folder](../static/images/). Omit this field to create a textual navigation menu item.

@@ -4,8 +4,8 @@
     {% assign the_item = item.url | split: "/" | join: "" %}
     <li class="main-nav-{{ item.text | slugify }} {% if the_page == the_item %}current{% endif %}">
         <a href="{{ item.url | relative_url }}"{% if item.title_text %} title="{{ item.title_text }}"{% endif %}>
-        {% if item.image_url %}
-            <img src="{{ "/static/images/" | append: item.image_url | relative_url }}" alt="{{ item.text }}" />
+        {% if item.image %}
+            <img src="{{ "/static/images/" | append: item.image | relative_url }}" alt="{{ item.text }}" />
         {% else %}
             {{ item.text }}
         {% endif %}

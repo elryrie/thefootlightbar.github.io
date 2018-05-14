@@ -1,36 +1,36 @@
 -
-  src: treadsspeakgoodeye.jpg
+  image: treadsspeakgoodeye.jpg
   caption: Treads by Mike Mehalick
 -
-  src: barlife.jpg
+  image: barlife.jpg
   caption: Bar life
 -
-  src: 441_170910_Laura_Tim-7434.jpg
+  image: 441_170910_Laura_Tim-7434.jpg
   caption: Photo by Lauren Stocker
 -
-  src: greatwoodsbaby.jpg
+  image: greatwoodsbaby.jpg
   caption: Great Woods (plus the next generation)
 -
-  src: treads+mike.jpg
+  image: treads+mike.jpg
   caption: Photo by Lauren Stocker
 -
-  src: desertsharkrsspeakgoodeye.jpg
+  image: desertsharkrsspeakgoodeye.jpg
   caption: Desert Sharks by Mike Mehalick
 -
-  src: footlight-front-room-during-day.jpg
+  image: footlight-front-room-during-day.jpg
   caption: The Footlight&rsquo; front room during the day.
 -
-  src: footlight-cocktail-party.jpg
+  image: footlight-cocktail-party.jpg
   featured: true
 -
-  src: footlight-bartender.jpg
+  image: footlight-bartender.jpg
   caption: Tending bar at The Footlight!
   featured: true
   link: https://example.com/
   link_title: Hello world.
 -
-  src: footlight-dance-party.jpg
+  image: footlight-dance-party.jpg
   featured: true
 -
-  src: footlight-red-light-dance-party.jpg
+  image: footlight-red-light-dance-party.jpg
   featured: true
