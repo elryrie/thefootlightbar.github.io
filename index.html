@@ -14,7 +14,7 @@ layout: default
 {% endif %}
 
 {% assign posts = site.posts | where: "featured", true %}
-{% if posts %}
+{% if posts.length %}
 <section id="featured-posts">
     <h1>Featured</h1>
     <ol>{% for post in posts %}
@@ -24,3 +24,17 @@ layout: default
     {% endfor %}</ol>
 </section>
 {% endif %}
+
+{% assign posts = site.posts | where: "featured", false %}
+<section id="blog-posts">
+    <h1>Blog</h1>
+{% if posts.length %}
+    <ol>{% for post in posts %}
+    <li>
+        {% include h-entry.html entry=post excerpt_only=true %}
+    </li>
+    {% endfor %}</ol>
+{% else %}
+    <p style="text-align: center;">No blog posts published yet.</p>
+{% endif %}
+</section>

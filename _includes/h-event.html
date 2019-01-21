@@ -86,7 +86,7 @@
                 Status: <span class="status">{{ event.Status | upcase }}</span>
             </li>{% endif %}
             <li class="p-description description">
-                {{ event.Description }}
+                {{ event.Description | newline_to_br }}
             </li>
             {% if event.URL %}<li>
                 <a href="{{ event.URL }}" class="u-url url">More info</a>

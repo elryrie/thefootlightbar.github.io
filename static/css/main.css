@@ -20,6 +20,7 @@ img {
 }
 nav ul,
 #featured-posts ol,
+#blog-posts ol,
 #gallery,
 .posts-wrapper,
 .Pagination,
@@ -283,10 +284,12 @@ header {
 #welcome h1 {
     display: none;
 }
-#featured-posts h1 {
+#featured-posts h1,
+#blog-posts h1 {
     text-align: center;
 }
 #featured-posts .h-entry footer,
+#blog-posts .h-entry footer,
 .posts-wrapper .h-entry footer {
     border-top: none;
 }
