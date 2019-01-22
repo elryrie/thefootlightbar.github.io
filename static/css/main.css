@@ -334,6 +334,26 @@ header {
 #events-wrapper .p-description {
     margin: 1em 0;
 }
+#events-wrapper .p-description > div {
+    cursor: pointer; /* Make iOS play nice with :hover and :focus on non-links. */
+    max-height: 3.75em;
+    transition: max-height 1s ease-in-out;
+    overflow-y: hidden;
+    border-bottom: 1px dotted #ccc;
+}
+#events-wrapper .p-description > div:hover {
+    max-height: 10000em;
+    border-bottom: none;
+}
+#events-wrapper .p-description > div:hover + .glyphicon-chevron-down {
+    display: none;
+}
+#events-wrapper .p-description > div + .glyphicon-chevron-down {
+    position: relative;
+    top: -0.5em;
+    width: 100%;
+    text-align: center;
+}
 .icalendar-links {
     text-align: center;
 }
