@@ -26,15 +26,13 @@ layout: default
 {% endif %}
 
 {% assign posts = site.posts | where: "featured", false %}
+{% if posts.length %}
 <section id="blog-posts">
     <h1>Blog</h1>
-{% if posts.length %}
     <ol>{% for post in posts %}
     <li>
         {% include h-entry.html entry=post excerpt_only=true %}
     </li>
     {% endfor %}</ol>
-{% else %}
-    <p style="text-align: center;">No blog posts published yet.</p>
-{% endif %}
 </section>
+{% endif %}

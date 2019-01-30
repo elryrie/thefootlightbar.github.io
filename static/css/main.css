@@ -38,11 +38,11 @@ nav ul,
 }
 #MainContent {
     padding-top: 35px;
-    padding-bottom: 50px;
 }
 #PageWrapper {
     max-width: 90%;
     margin: 0 auto;
+    padding-bottom: 50px;
 }
 #MainFooter {
     padding-top: 50px;
