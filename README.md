@@ -176,6 +176,10 @@ iCalendar:
 
 The planning stage for events that are missing this field from [the `events.csv` data file](_data/README.md#events). The values are the same as for [the `Status` field](_data/README.md#status). The default is `CONFIRMED`.
 
+#### `iCalendar.defaults.image`
+
+The file name of the image to use as an event image's placeholder for events that are missing this field from [the `events.csv` data file](_data/README.md#events).
+
 ### iCalendar to h-event
 
 These settings determine how iCalendar data is converted to [h-event](http://microformats.org/wiki/h-event) (HTML event) metadata.

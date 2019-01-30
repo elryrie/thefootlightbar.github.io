@@ -61,6 +61,7 @@ iCalendar:
     defaults:
         location: "465 Seneca Avenue, Ridgewood, Queens, NY, 11385, United States"
         status: "CONFIRMED"
+        image: "event-image-placeholder.jpg"
     date_format: "%B %e, %Y"
     time_format: "%l:%M %p"
     h_event:

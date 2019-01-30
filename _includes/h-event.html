@@ -48,7 +48,8 @@
     <li class="h-event vevent">
         <ul>
             <li class="event-image">
-                <img src="{{ event.Image | default: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8Ucr4HwAGCgJf+4iXZgAAAABJRU5ErkJggg==" }}" alt="" />
+                {% assign placeholder_image = "/static/images/" | append: site.iCalendar.defaults.image | relative_url %}
+                <img src="{{ event.Image | default: placeholder_image }}" alt="" />
             </li>
             <li class="p-summary summary p-name">
                 {{ event.Summary }}
